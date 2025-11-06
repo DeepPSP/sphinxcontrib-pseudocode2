@@ -3,7 +3,6 @@ Coverage test page
 
 .. pcode::
    :linenos:
-   :indent: 2
    :comment-delimiter: //
 
    \PRINT 'hello coverage'

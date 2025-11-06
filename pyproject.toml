@@ -10,7 +10,6 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = { file = "LICENSE.rst" }
 authors = [
-  { name = "Zeyuan Hu", email = "zeyuan.zack.hu@gmail.com" },
   { name = "WEN Hao", email = "wenh06@gmail.com" },
 ]
 classifiers = [
@@ -58,8 +57,8 @@ test = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/wenh06/sphinxcontrib-pseudocode2"
-Issues = "https://github.com/wenh06/sphinxcontrib-pseudocode2/issues"
+Homepage = "https://github.com/DeepPSP/sphinxcontrib-pseudocode2"
+Issues = "https://github.com/DeepPSP/sphinxcontrib-pseudocode2/issues"
 
 [tool.hatch.version]
 path = "sphinxcontrib/pseudocode2/version.py"
