@@ -37,8 +37,14 @@ jobs:
         pytest --cov=sphinxcontrib.pseudocode2 -vv -s --cov-report=term-missing tests
     - name: Upload coverage to Codecov
       if: matrix.python-version == '3.10'
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v5
       with:
         fail_ci_if_error: true # optional (default = false)
         verbose: true # optional (default = false)
         token: ${{ secrets.CODECOV_TOKEN }} # required
+        slug: DeepPSP/sphinxcontrib-pseudocode2
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }} && matrix.python-version == '3.10'
+      uses: codecov/test-results-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
