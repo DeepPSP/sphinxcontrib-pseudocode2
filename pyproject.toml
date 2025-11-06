@@ -62,13 +62,12 @@ Homepage = "https://github.com/wenh06/sphinxcontrib-pseudocode2"
 Issues = "https://github.com/wenh06/sphinxcontrib-pseudocode2/issues"
 
 [tool.hatch.version]
-path = "sphinxcontrib/pseudocode2.py"
+path = "sphinxcontrib/pseudocode2/version.py"
 pattern = "__version__\\s*=\\s*\"(?P<version>.+)\""
 
 [tool.hatch.build.targets.sdist]
 include = [
   "/sphinxcontrib",
-  "/sphinxcontrib/pseudocode-init.js",
   "/tests",
   "/README.md",
   "/LICENSE.rst",

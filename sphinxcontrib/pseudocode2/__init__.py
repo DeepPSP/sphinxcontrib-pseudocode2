@@ -1,5 +1,9 @@
+# -*- coding: utf-8 -*-
 """
-Sphinx extension to render LaTeX-style pseudocode using pseudocode.js.
+sphinxcontrib.pseudocode2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This sphinx extension renders LaTeX-style pseudocode using pseudocode.js.
 Compatible with Sphinx 7.1+, supports MathJax 3 and KaTeX, and coexists with sphinx.ext.mathjax.
 """
 
@@ -11,7 +15,8 @@ from sphinx.application import Sphinx
 from sphinx.util import logging
 from sphinx.util.docutils import SphinxDirective
 
-__version__ = "1.0.0"
+from .exceptions import Pseudocode2Error  # noqa: F401
+from .version import __version__
 
 logger = logging.getLogger(__name__)
 
