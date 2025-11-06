@@ -93,3 +93,9 @@ ENV/
 
 # IDEA project settings
 .idea
+
+!/docs/source/_static/
+!/docs/source/_templates/
+
+!/tests/**/_static/
+!/tests/**/_templates/
