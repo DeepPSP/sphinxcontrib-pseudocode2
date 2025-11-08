@@ -3,6 +3,7 @@
 [![pytest](https://github.com/DeepPSP/sphinxcontrib-pseudocode2/actions/workflows/run-pytest.yml/badge.svg)](https://github.com/DeepPSP/sphinxcontrib-pseudocode2/actions/workflows/run-pytest.yml)
 [![codecov](https://codecov.io/gh/DeepPSP/sphinxcontrib-pseudocode2/branch/master/graph/badge.svg?token=4IQD228F7L)](https://codecov.io/gh/DeepPSP/sphinxcontrib-pseudocode2)
 [![PyPI](https://img.shields.io/pypi/v/sphinxcontrib-pseudocode2?style=flat-square)](https://pypi.org/project/sphinxcontrib-pseudocode2/)
+[![RTD Status](https://readthedocs.org/projects/sphinxcontrib-pseudocode2/badge/?version=latest)](https://pcode2.readthedocs.io/en/latest/?badge=latest)
 [![gh-page status](https://github.com/DeepPSP/sphinxcontrib-pseudocode2/actions/workflows/docs-publish.yml/badge.svg?branch=doc)](https://github.com/DeepPSP/sphinxcontrib-pseudocode2/actions/workflows/docs-publish.yml)
 <!-- [![downloads](https://img.shields.io/pypi/dm/sphinxcontrib-pseudocode2?style=flat-square)](https://pypistats.org/packages/sphinxcontrib-pseudocode2) -->
 [![PyPI Downloads](https://static.pepy.tech/badge/sphinxcontrib-pseudocode2/month)](https://pepy.tech/projects/sphinxcontrib-pseudocode2)
