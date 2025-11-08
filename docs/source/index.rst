@@ -39,4 +39,25 @@ By default, each ``pcode`` is mapped to 'Algorithm %s' when referenced via ``ref
 You can change this behavior by overriding the corresponding string of ``'pseudocode'`` key in
 `numfig_format <https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-numfig_format>`_.
 
+Configuration Options
+======================
+
+Pseudocode rendering is extended with practical options (all compatible with pseudocode.js native capabilities):
+
+- ``linenos``: Enable line numbering
+- ``indent``: Set indentation (seems working only for ``em``, no other units) for code blocks, default: ``1.2em``
+- ``comment-delimiter``: Customize comment delimiters, default: ``//``
+- ``line-number-punc``: Set line number punctuation, default: ``:``
+- ``no-end``: Omit the ``END`` keyword for control blocks
+- ``title-prefix``: Customize the algorithm title prefix (e.g., ``PseudoCode`` instead of default ``Algorithm``)
+- ``caption-count``: Reset the caption counter to this number
+
+Global Configuration via ``pseudocode2_options``
+=====================================================
+
+Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)).
+
+**Priority Rule**:
+Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default
+
 .. include:: demo.rst

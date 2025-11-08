@@ -154,7 +154,6 @@ def setup_math_engine(app: Sphinx):
         app.add_js_file(
             None,
             body="""
-            // 让 pseudocode.js 明确依赖 MathJax
             if (window.pseudocode && !window.pseudocode.mathRenderer) {
                 window.pseudocode.mathRenderer = 'mathjax';
             }

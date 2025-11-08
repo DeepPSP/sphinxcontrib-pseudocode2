@@ -48,6 +48,7 @@ dev = [
   "twine",
   "sphinx",
   "pydata-sphinx-theme",
+  "sphinx-tabs",
 ]
 test = [
   "pytest>=7",
