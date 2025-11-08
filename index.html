@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to sphinxcontrib-pseudocode2 demo &#8212; sphinxcontrib-pseudocode2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+    <script>
+            if (window.pseudocode && !window.pseudocode.mathRenderer) {
+                window.pseudocode.mathRenderer = 'katex';
+            }
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.js"></script>
+    <script>
+        async function renderPseudocodeWithMath() {
+            try {
+                if (window.MathJax) {
+                    await MathJax.startup.promise;
+                    console.log("pseudocode2: MathJax is ready");
+                }
+
+                pseudocode.renderClass('pseudocode', {lineNumber: false, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                console.log("pseudocode2: Pseudocode rendered");
+
+                if (window.MathJax) {
+                    const pseudocodeBlocks = document.querySelectorAll('.pseudocode-container');
+                    MathJax.typesetPromise(pseudocodeBlocks).then(() => {
+                        console.log("pseudocode2: MathJax typeset completed for pseudocode");
+                    }).catch(err => {
+                        console.warn("pseudocode2: MathJax typeset failed:", err);
+                    });
+                }
+            } catch (err) {
+                console.error("pseudocode2: Render failed:", err);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderPseudocodeWithMath);
+        } else {
+            renderPseudocodeWithMath();
+        }
+    </script>
+    <script>
+            if (window.pseudocode && !window.pseudocode.mathRenderer) {
+                window.pseudocode.mathRenderer = 'katex';
+            }
+        </script>
+    <script>
+        async function renderPseudocodeWithMath() {
+            try {
+                if (window.MathJax) {
+                    await MathJax.startup.promise;
+                    console.log("pseudocode2: MathJax is ready");
+                }
+
+                pseudocode.renderClass('pseudocode', {lineNumber: false, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                console.log("pseudocode2: Pseudocode rendered");
+
+                if (window.MathJax) {
+                    const pseudocodeBlocks = document.querySelectorAll('.pseudocode-container');
+                    MathJax.typesetPromise(pseudocodeBlocks).then(() => {
+                        console.log("pseudocode2: MathJax typeset completed for pseudocode");
+                    }).catch(err => {
+                        console.warn("pseudocode2: MathJax typeset failed:", err);
+                    });
+                }
+            } catch (err) {
+                console.error("pseudocode2: Render failed:", err);
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderPseudocodeWithMath);
+        } else {
+            renderPseudocodeWithMath();
+        }
+    </script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/tabs.js?v=3030b3cb"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-sphinxcontrib-pseudocode2-demo">
+<h1>Welcome to sphinxcontrib-pseudocode2 demo<a class="headerlink" href="#welcome-to-sphinxcontrib-pseudocode2-demo" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<p>Below shows various rendered algorithms, which are copied from corresponding
+<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js/blob/master/static/body.html.part">pseudocode.js examples</a>.
+The source code of those algorithms can be found
+<a class="reference external" href="https://github.com/xxks-kkk/sphinxcontrib-pseudocode/blob/master/docs/demo.rst">here</a>.</p>
+<p>We can also reference any particular algorithm. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:ref:`test</span> <span class="pre">control</span> <span class="pre">blocks</span> <span class="pre">&lt;test-control-blocks&gt;`</span></code> produces <a class="reference internal" href="#test-control-blocks"><span class="std std-ref">test control blocks</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We assume each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> directive contains exactly one <span class="math notranslate nohighlight">\(\LaTeX\)</span> algorithmic block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">algorithm</span><span class="p">}</span>
+\<span class="n">caption</span><span class="p">{</span><span class="n">Test</span> <span class="n">atoms</span><span class="p">}</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">algorithmic</span><span class="p">}</span>
+\<span class="n">STATE</span> <span class="n">my</span> <span class="n">algorithm</span> <span class="mi">1</span>
+\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHMIC</span><span class="p">}</span>
+\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHM</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You still can have multiple algorithmic blocks but the numbering might be messed up.</p>
+</div>
+<p>By default, each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> is mapped to ‘Algorithm %s’ when referenced via <code class="docutils literal notranslate"><span class="pre">ref</span></code>.
+You can change this behavior by overriding the corresponding string of <code class="docutils literal notranslate"><span class="pre">'pseudocode'</span></code> key in
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-numfig_format">numfig_format</a>.</p>
+<section id="configuration-options">
+<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading">¶</a></h3>
+<p>Pseudocode rendering is extended with practical options (all compatible with pseudocode.js native capabilities):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linenos</span></code>: Enable line numbering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code>: Set indentation (seems working only for <code class="docutils literal notranslate"><span class="pre">em</span></code>, no other units) for code blocks, default: <code class="docutils literal notranslate"><span class="pre">1.2em</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comment-delimiter</span></code>: Customize comment delimiters, default: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line-number-punc</span></code>: Set line number punctuation, default: <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no-end</span></code>: Omit the <code class="docutils literal notranslate"><span class="pre">END</span></code> keyword for control blocks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title-prefix</span></code>: Customize the algorithm title prefix (e.g., <code class="docutils literal notranslate"><span class="pre">PseudoCode</span></code> instead of default <code class="docutils literal notranslate"><span class="pre">Algorithm</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption-count</span></code>: Reset the caption counter to this number</p></li>
+</ul>
+</section>
+<section id="global-configuration-via-pseudocode2-options">
+<h3>Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code><a class="headerlink" href="#global-configuration-via-pseudocode2-options" title="Link to this heading">¶</a></h3>
+<p>Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js">https://github.com/SaswatPadhi/pseudocode.js</a>)).</p>
+<p><strong>Priority Rule</strong>:
+Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) &gt; pseudocode2_options (global in conf.py) &gt; pseudocode.js default</p>
+<div class="sphinx-tabs docutils container" id="hello-world-algo">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466311400416" >\begin{algorithmic}
+\PRINT \texttt{&#39;hello world&#39;}
+\end{algorithmic}</pre></div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span>    \begin{algorithmic}
+<span class="linenos">4</span>    \PRINT \texttt{&#39;hello world&#39;}
+<span class="linenos">5</span>    \end{algorithmic}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container" id="quick-sort">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466310761248" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with     $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
+<span class="linenos"> 3</span>    <span class="nc">:title-prefix:</span> PseudoCode
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>    % This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+<span class="linenos"> 6</span>    \begin{algorithm}
+<span class="linenos"> 7</span>    \caption{Quicksort}
+<span class="linenos"> 8</span>    \begin{algorithmic}
+<span class="linenos"> 9</span>    \PROCEDURE{Quicksort}{$A, p, r$}
+<span class="linenos">10</span>        \IF{$p &lt; r$}
+<span class="linenos">11</span>            \STATE $q = $ \CALL{Partition}{$A, p, r$}
+<span class="linenos">12</span>            \STATE \CALL{Quicksort}{$A, p, q - 1$}
+<span class="linenos">13</span>            \STATE \CALL{Quicksort}{$A, q + 1, r$}
+<span class="linenos">14</span>        \ENDIF
+<span class="linenos">15</span>    \ENDPROCEDURE
+<span class="linenos">16</span>    \PROCEDURE{Partition}{$A, p, r$}
+<span class="linenos">17</span>        \STATE $x = A[r]$
+<span class="linenos">18</span>        \STATE $i = p - 1$
+<span class="linenos">19</span>        \FOR{$j = p$ \TO $r - 1$}
+<span class="linenos">20</span>            \IF{$A[j] &lt; x$}
+<span class="linenos">21</span>                \STATE $i = i + 1$
+<span class="linenos">22</span>                \STATE exchange
+<span class="linenos">23</span>                $A[i]$ with     $A[j]$
+<span class="linenos">24</span>            \ENDIF
+<span class="linenos">25</span>            \STATE exchange $A[i]$ with $A[r]$
+<span class="linenos">26</span>        \ENDFOR
+<span class="linenos">27</span>    \ENDPROCEDURE
+<span class="linenos">28</span>    \end{algorithmic}
+<span class="linenos">29</span>    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466312541520" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
+\caption{Test text-style}
+\begin{algorithmic}
+\REQUIRE some preconditions
+\ENSURE some postconditions
+\INPUT some inputs
+\OUTPUT some outputs
+\PROCEDURE{Test-Declarations}{}
+    \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
+    \STATE font weights: {normal weight, \bfseries bold, \mdseries
+    medium, \lfseries lighter. }
+    \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
+    \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
+    footnotesize \small small \normalsize normal \large large \Large Large
+    \LARGE LARGE \huge huge \Huge Huge \normalsize
+\ENDPROCEDURE
+\PROCEDURE{Test-Commands}{}
+    \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
+    \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
+    \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
+    \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
+\ENDPROCEDURE
+\PROCEDURE{Test-Colors}{}
+% feature not implemented
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:title-prefix:</span> 算法
+<span class="linenos"> 3</span>    <span class="nc">:indent:</span> 2.3em
+<span class="linenos"> 4</span>    <span class="nc">:caption-count:</span> 12
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    \begin{algorithm}
+<span class="linenos"> 7</span>    \caption{Test text-style}
+<span class="linenos"> 8</span>    \begin{algorithmic}
+<span class="linenos"> 9</span>    \REQUIRE some preconditions
+<span class="linenos">10</span>    \ENSURE some postconditions
+<span class="linenos">11</span>    \INPUT some inputs
+<span class="linenos">12</span>    \OUTPUT some outputs
+<span class="linenos">13</span>    \PROCEDURE{Test-Declarations}{}
+<span class="linenos">14</span>        \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
+<span class="linenos">15</span>        \STATE font weights: {normal weight, \bfseries bold, \mdseries
+<span class="linenos">16</span>        medium, \lfseries lighter. }
+<span class="linenos">17</span>        \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
+<span class="linenos">18</span>        \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
+<span class="linenos">19</span>        footnotesize \small small \normalsize normal \large large \Large Large
+<span class="linenos">20</span>        \LARGE LARGE \huge huge \Huge Huge \normalsize
+<span class="linenos">21</span>    \ENDPROCEDURE
+<span class="linenos">22</span>    \PROCEDURE{Test-Commands}{}
+<span class="linenos">23</span>        \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
+<span class="linenos">24</span>        \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
+<span class="linenos">25</span>        \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
+<span class="linenos">26</span>        \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
+<span class="linenos">27</span>    \ENDPROCEDURE
+<span class="linenos">28</span>    \PROCEDURE{Test-Colors}{}
+<span class="linenos">29</span>    % feature not implemented
+<span class="linenos">30</span>    \ENDPROCEDURE
+<span class="linenos">31</span>    \end{algorithmic}
+<span class="linenos">32</span>    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466310761296" data-line-number="true">\begin{algorithm}
+\caption{Test atoms}
+\begin{algorithmic}
+\STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
+\STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
+\STATE \textbf{Carriage return:} first line \\ second line
+\STATE \textbf{Text-symbols:} \textbackslash
+\STATE \textbf{Quote-symbols:} `single quotes&#39;, ``double quotes&#39;&#39;
+\STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
+\END{ALGORITHMIC}
+\END{ALGORITHM}</pre></div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>    \begin{algorithm}
+<span class="linenos"> 5</span>    \caption{Test atoms}
+<span class="linenos"> 6</span>    \begin{algorithmic}
+<span class="linenos"> 7</span>    \STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
+<span class="linenos"> 8</span>    \STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
+<span class="linenos"> 9</span>    \STATE \textbf{Carriage return:} first line \\ second line
+<span class="linenos">10</span>    \STATE \textbf{Text-symbols:} \textbackslash
+<span class="linenos">11</span>    \STATE \textbf{Quote-symbols:} <span class="nv">`single quotes&#39;, `</span>`double quotes&#39;&#39;
+<span class="linenos">12</span>    \STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
+<span class="linenos">13</span>    \END{ALGORITHMIC}
+<span class="linenos">14</span>    \END{ALGORITHM}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container" id="test-control-blocks">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466311400368" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
+\caption{Test control blocks}
+\begin{algorithmic}
+\PROCEDURE{Test-If}{}
+    \IF{ &lt;cond&gt;}
+        \STATE &lt;block&gt;;
+    \ELIF{&lt;cond&gt;}
+        \STATE &lt;block&gt;;
+    \ELSE
+        \STATE &lt;block&gt;;
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Test-For}{$n$}
+    \STATE $i \gets 0$
+    \FOR{$i &lt; n$}
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-To}{$n$}
+    \STATE $i \gets 0$
+    \FOR{$i$ \TO $n$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-DownTo}{$n$}
+    \FOR{$i \gets n$ \DOWNTO $0$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-All}{$n$}
+    \FORALL{$i \in \{0, 1, \cdots, n\}$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-While}{$n$}
+    \STATE $i \gets 0$
+    \WHILE{$i &lt; n$}
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \ENDWHILE
+\ENDPROCEDURE
+\PROCEDURE{Test-Repeat}{$n$}
+    \STATE $i \gets 0$
+    \REPEAT
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \UNTIL{$i&gt;n$}
+\ENDPROCEDURE
+\PROCEDURE{Test-Break-Continue}{$n$}
+    \FOR{$i = 0$ \TO $2n$}
+        \IF{$i &lt; n/2$}
+            \CONTINUE
+        \ELIF{$i &gt; n$}
+            \BREAK
+        \ENDIF
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
+<span class="linenos"> 3</span>    <span class="nc">:line-number-punc:</span> :
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>    \begin{algorithm}
+<span class="linenos"> 6</span>    \caption{Test control blocks}
+<span class="linenos"> 7</span>    \begin{algorithmic}
+<span class="linenos"> 8</span>    \PROCEDURE{Test-If}{}
+<span class="linenos"> 9</span>        \IF{ &lt;cond&gt;}
+<span class="linenos">10</span>            \STATE &lt;block&gt;;
+<span class="linenos">11</span>        \ELIF{&lt;cond&gt;}
+<span class="linenos">12</span>            \STATE &lt;block&gt;;
+<span class="linenos">13</span>        \ELSE
+<span class="linenos">14</span>            \STATE &lt;block&gt;;
+<span class="linenos">15</span>        \ENDIF
+<span class="linenos">16</span>    \ENDPROCEDURE
+<span class="linenos">17</span>    \PROCEDURE{Test-For}{$n$}
+<span class="linenos">18</span>        \STATE $i \gets 0$
+<span class="linenos">19</span>        \FOR{$i &lt; n$}
+<span class="linenos">20</span>            \PRINT $i$
+<span class="linenos">21</span>            \STATE $i \gets i + 1$
+<span class="linenos">22</span>        \ENDFOR
+<span class="linenos">23</span>    \ENDPROCEDURE
+<span class="linenos">24</span>    \PROCEDURE{Test-For-To}{$n$}
+<span class="linenos">25</span>        \STATE $i \gets 0$
+<span class="linenos">26</span>        \FOR{$i$ \TO $n$}
+<span class="linenos">27</span>            \PRINT $i$
+<span class="linenos">28</span>        \ENDFOR
+<span class="linenos">29</span>    \ENDPROCEDURE
+<span class="linenos">30</span>    \PROCEDURE{Test-For-DownTo}{$n$}
+<span class="linenos">31</span>        \FOR{$i \gets n$ \DOWNTO $0$}
+<span class="linenos">32</span>            \PRINT $i$
+<span class="linenos">33</span>        \ENDFOR
+<span class="linenos">34</span>    \ENDPROCEDURE
+<span class="linenos">35</span>    \PROCEDURE{Test-For-All}{$n$}
+<span class="linenos">36</span>        \FORALL{$i \in \{0, 1, \cdots, n\}$}
+<span class="linenos">37</span>            \PRINT $i$
+<span class="linenos">38</span>        \ENDFOR
+<span class="linenos">39</span>    \ENDPROCEDURE
+<span class="linenos">40</span>    \PROCEDURE{Test-While}{$n$}
+<span class="linenos">41</span>        \STATE $i \gets 0$
+<span class="linenos">42</span>        \WHILE{$i &lt; n$}
+<span class="linenos">43</span>            \PRINT $i$
+<span class="linenos">44</span>            \STATE $i \gets i + 1$
+<span class="linenos">45</span>        \ENDWHILE
+<span class="linenos">46</span>    \ENDPROCEDURE
+<span class="linenos">47</span>    \PROCEDURE{Test-Repeat}{$n$}
+<span class="linenos">48</span>        \STATE $i \gets 0$
+<span class="linenos">49</span>        \REPEAT
+<span class="linenos">50</span>            \PRINT $i$
+<span class="linenos">51</span>            \STATE $i \gets i + 1$
+<span class="linenos">52</span>        \UNTIL{$i&gt;n$}
+<span class="linenos">53</span>    \ENDPROCEDURE
+<span class="linenos">54</span>    \PROCEDURE{Test-Break-Continue}{$n$}
+<span class="linenos">55</span>        \FOR{$i = 0$ \TO $2n$}
+<span class="linenos">56</span>            \IF{$i &lt; n/2$}
+<span class="linenos">57</span>                \CONTINUE
+<span class="linenos">58</span>            \ELIF{$i &gt; n$}
+<span class="linenos">59</span>                \BREAK
+<span class="linenos">60</span>            \ENDIF
+<span class="linenos">61</span>            \PRINT $i$
+<span class="linenos">62</span>        \ENDFOR
+<span class="linenos">63</span>    \ENDPROCEDURE
+<span class="linenos">64</span>    \end{algorithmic}
+<span class="linenos">65</span>    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466313016800" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="+" data-no-end="true">\begin{algorithm}
+\caption{Test statements and comments}
+\begin{algorithmic}
+\PROCEDURE{Test-Statements}{}
+    \STATE This line is a normal statement
+    \PRINT \texttt{`this is print statement&#39;}
+    \RETURN $retval$
+\ENDPROCEDURE
+
+\PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
+    \STATE a statement \COMMENT{inline comment}
+    \STATE \COMMENT{line comment}
+    \IF{some condition}\COMMENT{comment for if}
+        \RETURN \TRUE \COMMENT{another inline comment}
+    \ELSE \COMMENT{comment for else}
+        \RETURN \FALSE \COMMENT{yet another inline comment}
+    \ENDIF
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:comment-delimiter:</span> %
+<span class="linenos"> 3</span>    <span class="nc">:no-end:</span>
+<span class="linenos"> 4</span>    <span class="nc">:linenos:</span>
+<span class="linenos"> 5</span>    <span class="nc">:line-number-punc:</span> +
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>    \begin{algorithm}
+<span class="linenos"> 8</span>    \caption{Test statements and comments}
+<span class="linenos"> 9</span>    \begin{algorithmic}
+<span class="linenos">10</span>    \PROCEDURE{Test-Statements}{}
+<span class="linenos">11</span>        \STATE This line is a normal statement
+<span class="linenos">12</span>        \PRINT \texttt{`this is print statement&#39;}
+<span class="linenos">13</span>        \RETURN $retval$
+<span class="linenos">14</span>    \ENDPROCEDURE
+<span class="linenos">15</span>
+<span class="linenos">16</span>    \PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
+<span class="linenos">17</span>        \STATE a statement \COMMENT{inline comment}
+<span class="linenos">18</span>        \STATE \COMMENT{line comment}
+<span class="linenos">19</span>        \IF{some condition}\COMMENT{comment for if}
+<span class="linenos">20</span>            \RETURN \TRUE \COMMENT{another inline comment}
+<span class="linenos">21</span>        \ELSE \COMMENT{comment for else}
+<span class="linenos">22</span>            \RETURN \FALSE \COMMENT{yet another inline comment}
+<span class="linenos">23</span>        \ENDIF
+<span class="linenos">24</span>    \ENDPROCEDURE
+<span class="linenos">25</span>    \end{algorithmic}
+<span class="linenos">26</span>    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-140466311959792" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
+% to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+<span class="linenos"> 2</span>    <span class="nc">:indent:</span> 5em
+<span class="linenos"> 3</span>    <span class="nc">:linenos:</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>    % This quicksort algorithm is extracted from Chapter 7, Introduction
+<span class="linenos"> 6</span>    % to Algorithms (3rd edition)
+<span class="linenos"> 7</span>    \begin{algorithm}
+<span class="linenos"> 8</span>    \caption{Quicksort}
+<span class="linenos"> 9</span>    \begin{algorithmic}
+<span class="linenos">10</span>    \PROCEDURE{Quicksort}{$A, p, r$}
+<span class="linenos">11</span>        \IF{$p &lt; r$}
+<span class="linenos">12</span>            \STATE $q = $ \CALL{Partition}{$A, p, r$}
+<span class="linenos">13</span>            \STATE \CALL{Quicksort}{$A, p, q - 1$}
+<span class="linenos">14</span>            \STATE \CALL{Quicksort}{$A, q + 1, r$}
+<span class="linenos">15</span>        \ENDIF
+<span class="linenos">16</span>    \ENDPROCEDURE
+<span class="linenos">17</span>    \PROCEDURE{Partition}{$A, p, r$}
+<span class="linenos">18</span>        \STATE $x = A[r]$
+<span class="linenos">19</span>        \STATE $i = p - 1$
+<span class="linenos">20</span>        \FOR{$j = p$ \TO $r - 1$}
+<span class="linenos">21</span>            \IF{$A[j] &lt; x$}
+<span class="linenos">22</span>                \STATE $i = i + 1$
+<span class="linenos">23</span>                \STATE exchange
+<span class="linenos">24</span>                $A[i]$ with $A[j]$
+<span class="linenos">25</span>            \ENDIF
+<span class="linenos">26</span>            \STATE exchange $A[i]$ with $A[r]$
+<span class="linenos">27</span>        \ENDFOR
+<span class="linenos">28</span>    \ENDPROCEDURE
+<span class="linenos">29</span>    \end{algorithmic}
+<span class="linenos">30</span>    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">sphinxcontrib-pseudocode2</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2021, Zeyuan Hu; 2025, WEN Hao.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
