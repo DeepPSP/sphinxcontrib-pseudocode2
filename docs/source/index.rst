@@ -60,4 +60,8 @@ Pseudocode rendering styles can be unified across the entire project using a sin
 **Priority Rule**:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default
 
+########
+Examples
+########
+
 .. include:: demo.rst
