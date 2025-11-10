@@ -7,6 +7,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.autosummary",
     "sphinx_tabs.tabs",
+    # "sphinx_copybutton",
     "sphinxcontrib.pseudocode2",
 ]
 
@@ -28,7 +29,8 @@ todo_include_todos = False
 
 # -- HTML -----------------------------------------------------------------
 
-html_theme = "alabaster"
+# html_theme = "alabaster"
+html_theme = "furo"
 html_static_path = ["_static"]
 html_show_sourcelink = True
 htmlhelp_basename = "sphinxcontrib-pseudocode2-doc"
@@ -44,3 +46,8 @@ pseudocode2_options = {
     "noEnd": False,  # Global default: show "END" for control blocks
     "titlePrefix": "PseudoCode",  # Global default title prefix (replace "Algorithm")
 }
+
+
+def setup(app):
+    app.add_js_file("codeblock.js")
+    app.add_css_file("codeblock.css")

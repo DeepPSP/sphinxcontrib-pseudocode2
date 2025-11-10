@@ -49,6 +49,8 @@ dev = [
   "sphinx",
   "pydata-sphinx-theme",
   "sphinx-tabs",
+  "sphinx-copybutton",
+  "furo",
 ]
 test = [
   "pytest>=7",
