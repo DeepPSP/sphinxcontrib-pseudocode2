@@ -59,6 +59,7 @@
     .. tab:: Source Code
 
         .. code-block:: rst
+            :linenos:
 
             .. pcode::
                 :linenos:
@@ -130,6 +131,7 @@
     .. tab:: Source Code
 
         .. code-block:: rst
+            :linenos:
 
             .. pcode::
                 :title-prefix: 算法
