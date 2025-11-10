@@ -1,19 +1,756 @@
-<!DOCTYPE html>
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html">
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Welcome to sphinxcontrib-pseudocode2 demo &#8212; sphinxcontrib-pseudocode2  documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <!-- Generated with Sphinx 7.4.7 and Furo 2025.09.25 -->
+        <title>sphinxcontrib-pseudocode2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=580074bf" />
+    <link rel="stylesheet" type="text/css" href="_static/codeblock.css?v=7c4e5ce9" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pseudocode@2.4.1/build/pseudocode.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=a5c4661c" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">sphinxcontrib-pseudocode2  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <span class="sidebar-brand-text">sphinxcontrib-pseudocode2  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/index.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="welcome-to-sphinxcontrib-pseudocode2-demo">
+<h1>Welcome to sphinxcontrib-pseudocode2 demo<a class="headerlink" href="#welcome-to-sphinxcontrib-pseudocode2-demo" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<p>Below shows various rendered algorithms, which are copied from corresponding
+<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js/blob/master/static/body.html.part">pseudocode.js examples</a>.
+The source code of those algorithms can be found
+<a class="reference external" href="https://github.com/xxks-kkk/sphinxcontrib-pseudocode/blob/master/docs/demo.rst">here</a>.</p>
+<p>We can also reference any particular algorithm. For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:ref:`test</span> <span class="pre">control</span> <span class="pre">blocks</span> <span class="pre">&lt;test-control-blocks&gt;`</span></code> produces <a class="reference internal" href="#test-control-blocks"><span class="std std-ref">test control blocks</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We assume each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> directive contains exactly one <span class="math notranslate nohighlight">\(\LaTeX\)</span> algorithmic block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">algorithm</span><span class="p">}</span>
+\<span class="n">caption</span><span class="p">{</span><span class="n">Test</span> <span class="n">atoms</span><span class="p">}</span>
+\<span class="n">begin</span><span class="p">{</span><span class="n">algorithmic</span><span class="p">}</span>
+\<span class="n">STATE</span> <span class="n">my</span> <span class="n">algorithm</span> <span class="mi">1</span>
+\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHMIC</span><span class="p">}</span>
+\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHM</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>You still can have multiple algorithmic blocks but the numbering might be messed up.</p>
+</div>
+<p>By default, each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> is mapped to ‘Algorithm %s’ when referenced via <code class="docutils literal notranslate"><span class="pre">ref</span></code>.
+You can change this behavior by overriding the corresponding string of <code class="docutils literal notranslate"><span class="pre">'pseudocode'</span></code> key in
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-numfig_format">numfig_format</a>.</p>
+<section id="configuration-options">
+<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading">¶</a></h3>
+<p>Pseudocode rendering is extended with practical options (all compatible with pseudocode.js native capabilities):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linenos</span></code>: Enable line numbering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code>: Set indentation (seems working only for <code class="docutils literal notranslate"><span class="pre">em</span></code>, no other units) for code blocks, default: <code class="docutils literal notranslate"><span class="pre">1.2em</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comment-delimiter</span></code>: Customize comment delimiters, default: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">line-number-punc</span></code>: Set line number punctuation, default: <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no-end</span></code>: Omit the <code class="docutils literal notranslate"><span class="pre">END</span></code> keyword for control blocks</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title-prefix</span></code>: Customize the algorithm title prefix (e.g., <code class="docutils literal notranslate"><span class="pre">PseudoCode</span></code> instead of default <code class="docutils literal notranslate"><span class="pre">Algorithm</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caption-count</span></code>: Reset the caption counter to this number</p></li>
+</ul>
+</section>
+<section id="global-configuration-via-pseudocode2-options">
+<h3>Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code><a class="headerlink" href="#global-configuration-via-pseudocode2-options" title="Link to this heading">¶</a></h3>
+<p>Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js">https://github.com/SaswatPadhi/pseudocode.js</a>)).</p>
+<p><strong>Priority Rule</strong>:
+Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) &gt; pseudocode2_options (global in conf.py) &gt; pseudocode.js default</p>
+<div class="sphinx-tabs docutils container" id="hello-world-algo">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852127406448" >\begin{algorithmic}
+\PRINT \texttt{&#39;hello world&#39;}
+\end{algorithmic}</pre></div>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+
+    \begin{algorithmic}
+    \PRINT \texttt{&#39;hello world&#39;}
+    \end{algorithmic}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container" id="quick-sort">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852128494256" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with     $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:linenos:</span>
+    <span class="nc">:title-prefix:</span> PseudoCode
+
+    % This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+    \begin{algorithm}
+    \caption{Quicksort}
+    \begin{algorithmic}
+    \PROCEDURE{Quicksort}{$A, p, r$}
+        \IF{$p &lt; r$}
+            \STATE $q = $ \CALL{Partition}{$A, p, r$}
+            \STATE \CALL{Quicksort}{$A, p, q - 1$}
+            \STATE \CALL{Quicksort}{$A, q + 1, r$}
+        \ENDIF
+    \ENDPROCEDURE
+    \PROCEDURE{Partition}{$A, p, r$}
+        \STATE $x = A[r]$
+        \STATE $i = p - 1$
+        \FOR{$j = p$ \TO $r - 1$}
+            \IF{$A[j] &lt; x$}
+                \STATE $i = i + 1$
+                \STATE exchange
+                $A[i]$ with     $A[j]$
+            \ENDIF
+            \STATE exchange $A[i]$ with $A[r]$
+        \ENDFOR
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852127406064" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
+\caption{Test text-style}
+\begin{algorithmic}
+\REQUIRE some preconditions
+\ENSURE some postconditions
+\INPUT some inputs
+\OUTPUT some outputs
+\PROCEDURE{Test-Declarations}{}
+    \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
+    \STATE font weights: {normal weight, \bfseries bold, \mdseries
+    medium, \lfseries lighter. }
+    \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
+    \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
+    footnotesize \small small \normalsize normal \large large \Large Large
+    \LARGE LARGE \huge huge \Huge Huge \normalsize
+\ENDPROCEDURE
+\PROCEDURE{Test-Commands}{}
+    \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
+    \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
+    \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
+    \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
+\ENDPROCEDURE
+\PROCEDURE{Test-Colors}{}
+% feature not implemented
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:title-prefix:</span> 算法
+    <span class="nc">:indent:</span> 2.3em
+    <span class="nc">:caption-count:</span> 12
+
+    \begin{algorithm}
+    \caption{Test text-style}
+    \begin{algorithmic}
+    \REQUIRE some preconditions
+    \ENSURE some postconditions
+    \INPUT some inputs
+    \OUTPUT some outputs
+    \PROCEDURE{Test-Declarations}{}
+        \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
+        \STATE font weights: {normal weight, \bfseries bold, \mdseries
+        medium, \lfseries lighter. }
+        \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
+        \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
+        footnotesize \small small \normalsize normal \large large \Large Large
+        \LARGE LARGE \huge huge \Huge Huge \normalsize
+    \ENDPROCEDURE
+    \PROCEDURE{Test-Commands}{}
+        \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
+        \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
+        \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
+        \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
+    \ENDPROCEDURE
+    \PROCEDURE{Test-Colors}{}
+    % feature not implemented
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852128936432" data-line-number="true">\begin{algorithm}
+\caption{Test atoms}
+\begin{algorithmic}
+\STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
+\STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
+\STATE \textbf{Carriage return:} first line \\ second line
+\STATE \textbf{Text-symbols:} \textbackslash
+\STATE \textbf{Quote-symbols:} `single quotes&#39;, ``double quotes&#39;&#39;
+\STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
+\END{ALGORITHMIC}
+\END{ALGORITHM}</pre></div>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:linenos:</span>
+
+    \begin{algorithm}
+    \caption{Test atoms}
+    \begin{algorithmic}
+    \STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
+    \STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
+    \STATE \textbf{Carriage return:} first line \\ second line
+    \STATE \textbf{Text-symbols:} \textbackslash
+    \STATE \textbf{Quote-symbols:} <span class="nv">`single quotes&#39;, `</span>`double quotes&#39;&#39;
+    \STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
+    \END{ALGORITHMIC}
+    \END{ALGORITHM}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container" id="test-control-blocks">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852128936816" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
+\caption{Test control blocks}
+\begin{algorithmic}
+\PROCEDURE{Test-If}{}
+    \IF{ &lt;cond&gt;}
+        \STATE &lt;block&gt;;
+    \ELIF{&lt;cond&gt;}
+        \STATE &lt;block&gt;;
+    \ELSE
+        \STATE &lt;block&gt;;
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Test-For}{$n$}
+    \STATE $i \gets 0$
+    \FOR{$i &lt; n$}
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-To}{$n$}
+    \STATE $i \gets 0$
+    \FOR{$i$ \TO $n$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-DownTo}{$n$}
+    \FOR{$i \gets n$ \DOWNTO $0$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-For-All}{$n$}
+    \FORALL{$i \in \{0, 1, \cdots, n\}$}
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\PROCEDURE{Test-While}{$n$}
+    \STATE $i \gets 0$
+    \WHILE{$i &lt; n$}
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \ENDWHILE
+\ENDPROCEDURE
+\PROCEDURE{Test-Repeat}{$n$}
+    \STATE $i \gets 0$
+    \REPEAT
+        \PRINT $i$
+        \STATE $i \gets i + 1$
+    \UNTIL{$i&gt;n$}
+\ENDPROCEDURE
+\PROCEDURE{Test-Break-Continue}{$n$}
+    \FOR{$i = 0$ \TO $2n$}
+        \IF{$i &lt; n/2$}
+            \CONTINUE
+        \ELIF{$i &gt; n$}
+            \BREAK
+        \ENDIF
+        \PRINT $i$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:linenos:</span>
+    <span class="nc">:line-number-punc:</span> :
+
+    \begin{algorithm}
+    \caption{Test control blocks}
+    \begin{algorithmic}
+    \PROCEDURE{Test-If}{}
+        \IF{ &lt;cond&gt;}
+            \STATE &lt;block&gt;;
+        \ELIF{&lt;cond&gt;}
+            \STATE &lt;block&gt;;
+        \ELSE
+            \STATE &lt;block&gt;;
+        \ENDIF
+    \ENDPROCEDURE
+    \PROCEDURE{Test-For}{$n$}
+        \STATE $i \gets 0$
+        \FOR{$i &lt; n$}
+            \PRINT $i$
+            \STATE $i \gets i + 1$
+        \ENDFOR
+    \ENDPROCEDURE
+    \PROCEDURE{Test-For-To}{$n$}
+        \STATE $i \gets 0$
+        \FOR{$i$ \TO $n$}
+            \PRINT $i$
+        \ENDFOR
+    \ENDPROCEDURE
+    \PROCEDURE{Test-For-DownTo}{$n$}
+        \FOR{$i \gets n$ \DOWNTO $0$}
+            \PRINT $i$
+        \ENDFOR
+    \ENDPROCEDURE
+    \PROCEDURE{Test-For-All}{$n$}
+        \FORALL{$i \in \{0, 1, \cdots, n\}$}
+            \PRINT $i$
+        \ENDFOR
+    \ENDPROCEDURE
+    \PROCEDURE{Test-While}{$n$}
+        \STATE $i \gets 0$
+        \WHILE{$i &lt; n$}
+            \PRINT $i$
+            \STATE $i \gets i + 1$
+        \ENDWHILE
+    \ENDPROCEDURE
+    \PROCEDURE{Test-Repeat}{$n$}
+        \STATE $i \gets 0$
+        \REPEAT
+            \PRINT $i$
+            \STATE $i \gets i + 1$
+        \UNTIL{$i&gt;n$}
+    \ENDPROCEDURE
+    \PROCEDURE{Test-Break-Continue}{$n$}
+        \FOR{$i = 0$ \TO $2n$}
+            \IF{$i &lt; n/2$}
+                \CONTINUE
+            \ELIF{$i &gt; n$}
+                \BREAK
+            \ENDIF
+            \PRINT $i$
+        \ENDFOR
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852128865440" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="+" data-no-end="true">\begin{algorithm}
+\caption{Test statements and comments}
+\begin{algorithmic}
+\PROCEDURE{Test-Statements}{}
+    \STATE This line is a normal statement
+    \PRINT \texttt{`this is print statement&#39;}
+    \RETURN $retval$
+\ENDPROCEDURE
+
+\PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
+    \STATE a statement \COMMENT{inline comment}
+    \STATE \COMMENT{line comment}
+    \IF{some condition}\COMMENT{comment for if}
+        \RETURN \TRUE \COMMENT{another inline comment}
+    \ELSE \COMMENT{comment for else}
+        \RETURN \FALSE \COMMENT{yet another inline comment}
+    \ENDIF
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:comment-delimiter:</span> %
+    <span class="nc">:no-end:</span>
+    <span class="nc">:linenos:</span>
+    <span class="nc">:line-number-punc:</span> +
+
+    \begin{algorithm}
+    \caption{Test statements and comments}
+    \begin{algorithmic}
+    \PROCEDURE{Test-Statements}{}
+        \STATE This line is a normal statement
+        \PRINT \texttt{`this is print statement&#39;}
+        \RETURN $retval$
+    \ENDPROCEDURE
+
+    \PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
+        \STATE a statement \COMMENT{inline comment}
+        \STATE \COMMENT{line comment}
+        \IF{some condition}\COMMENT{comment for if}
+            \RETURN \TRUE \COMMENT{another inline comment}
+        \ELSE \COMMENT{comment for else}
+            \RETURN \FALSE \COMMENT{yet another inline comment}
+        \ENDIF
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
+<pre class="pseudocode" id="pseudocode-139852127842944" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
+% to Algorithms (3rd edition)
+\begin{algorithm}
+\caption{Quicksort}
+\begin{algorithmic}
+\PROCEDURE{Quicksort}{$A, p, r$}
+    \IF{$p &lt; r$}
+        \STATE $q = $ \CALL{Partition}{$A, p, r$}
+        \STATE \CALL{Quicksort}{$A, p, q - 1$}
+        \STATE \CALL{Quicksort}{$A, q + 1, r$}
+    \ENDIF
+\ENDPROCEDURE
+\PROCEDURE{Partition}{$A, p, r$}
+    \STATE $x = A[r]$
+    \STATE $i = p - 1$
+    \FOR{$j = p$ \TO $r - 1$}
+        \IF{$A[j] &lt; x$}
+            \STATE $i = i + 1$
+            \STATE exchange
+            $A[i]$ with $A[j]$
+        \ENDIF
+        \STATE exchange $A[i]$ with $A[r]$
+    \ENDFOR
+\ENDPROCEDURE
+\end{algorithmic}
+\end{algorithm}</pre></div>
+</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:indent:</span> 5em
+    <span class="nc">:linenos:</span>
+
+    % This quicksort algorithm is extracted from Chapter 7, Introduction
+    % to Algorithms (3rd edition)
+    \begin{algorithm}
+    \caption{Quicksort}
+    \begin{algorithmic}
+    \PROCEDURE{Quicksort}{$A, p, r$}
+        \IF{$p &lt; r$}
+            \STATE $q = $ \CALL{Partition}{$A, p, r$}
+            \STATE \CALL{Quicksort}{$A, p, q - 1$}
+            \STATE \CALL{Quicksort}{$A, q + 1, r$}
+        \ENDIF
+    \ENDPROCEDURE
+    \PROCEDURE{Partition}{$A, p, r$}
+        \STATE $x = A[r]$
+        \STATE $i = p - 1$
+        \FOR{$j = p$ \TO $r - 1$}
+            \IF{$A[j] &lt; x$}
+                \STATE $i = i + 1$
+                \STATE exchange
+                $A[i]$ with $A[j]$
+            \ENDIF
+            \STATE exchange $A[i]$ with $A[r]$
+        \ENDFOR
+    \ENDPROCEDURE
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
+</div></div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021, Zeyuan Hu; 2025, WEN Hao
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Welcome to sphinxcontrib-pseudocode2 demo</a><ul>
+<li><a class="reference internal" href="#features">Features</a><ul>
+<li><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
+<li><a class="reference internal" href="#global-configuration-via-pseudocode2-options">Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=46bd48cc"></script>
+    <script src="_static/codeblock.js?v=827ccd21"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
     <script>
             if (window.pseudocode && !window.pseudocode.mathRenderer) {
@@ -88,547 +825,5 @@
     </script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/tabs.js?v=3030b3cb"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-
-  
-  
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
-
-          <div class="body" role="main">
-            
-  <section id="welcome-to-sphinxcontrib-pseudocode2-demo">
-<h1>Welcome to sphinxcontrib-pseudocode2 demo<a class="headerlink" href="#welcome-to-sphinxcontrib-pseudocode2-demo" title="Link to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-</div>
-<section id="features">
-<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
-<p>Below shows various rendered algorithms, which are copied from corresponding
-<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js/blob/master/static/body.html.part">pseudocode.js examples</a>.
-The source code of those algorithms can be found
-<a class="reference external" href="https://github.com/xxks-kkk/sphinxcontrib-pseudocode/blob/master/docs/demo.rst">here</a>.</p>
-<p>We can also reference any particular algorithm. For example:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">:ref:`test</span> <span class="pre">control</span> <span class="pre">blocks</span> <span class="pre">&lt;test-control-blocks&gt;`</span></code> produces <a class="reference internal" href="#test-control-blocks"><span class="std std-ref">test control blocks</span></a></p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We assume each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> directive contains exactly one <span class="math notranslate nohighlight">\(\LaTeX\)</span> algorithmic block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">begin</span><span class="p">{</span><span class="n">algorithm</span><span class="p">}</span>
-\<span class="n">caption</span><span class="p">{</span><span class="n">Test</span> <span class="n">atoms</span><span class="p">}</span>
-\<span class="n">begin</span><span class="p">{</span><span class="n">algorithmic</span><span class="p">}</span>
-\<span class="n">STATE</span> <span class="n">my</span> <span class="n">algorithm</span> <span class="mi">1</span>
-\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHMIC</span><span class="p">}</span>
-\<span class="n">END</span><span class="p">{</span><span class="n">ALGORITHM</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>You still can have multiple algorithmic blocks but the numbering might be messed up.</p>
-</div>
-<p>By default, each <code class="docutils literal notranslate"><span class="pre">pcode</span></code> is mapped to ‘Algorithm %s’ when referenced via <code class="docutils literal notranslate"><span class="pre">ref</span></code>.
-You can change this behavior by overriding the corresponding string of <code class="docutils literal notranslate"><span class="pre">'pseudocode'</span></code> key in
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-numfig_format">numfig_format</a>.</p>
-<section id="configuration-options">
-<h3>Configuration Options<a class="headerlink" href="#configuration-options" title="Link to this heading">¶</a></h3>
-<p>Pseudocode rendering is extended with practical options (all compatible with pseudocode.js native capabilities):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">linenos</span></code>: Enable line numbering</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code>: Set indentation (seems working only for <code class="docutils literal notranslate"><span class="pre">em</span></code>, no other units) for code blocks, default: <code class="docutils literal notranslate"><span class="pre">1.2em</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">comment-delimiter</span></code>: Customize comment delimiters, default: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">line-number-punc</span></code>: Set line number punctuation, default: <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">no-end</span></code>: Omit the <code class="docutils literal notranslate"><span class="pre">END</span></code> keyword for control blocks</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">title-prefix</span></code>: Customize the algorithm title prefix (e.g., <code class="docutils literal notranslate"><span class="pre">PseudoCode</span></code> instead of default <code class="docutils literal notranslate"><span class="pre">Algorithm</span></code>)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">caption-count</span></code>: Reset the caption counter to this number</p></li>
-</ul>
-</section>
-<section id="global-configuration-via-pseudocode2-options">
-<h3>Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code><a class="headerlink" href="#global-configuration-via-pseudocode2-options" title="Link to this heading">¶</a></h3>
-<p>Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js">https://github.com/SaswatPadhi/pseudocode.js</a>)).</p>
-<p><strong>Priority Rule</strong>:
-Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) &gt; pseudocode2_options (global in conf.py) &gt; pseudocode.js default</p>
-<div class="sphinx-tabs docutils container" id="hello-world-algo">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038741191648" >\begin{algorithmic}
-\PRINT \texttt{&#39;hello world&#39;}
-\end{algorithmic}</pre></div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span>    \begin{algorithmic}
-<span class="linenos">4</span>    \PRINT \texttt{&#39;hello world&#39;}
-<span class="linenos">5</span>    \end{algorithmic}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container" id="quick-sort">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038740552480" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$A, p, r$}
-    \IF{$p &lt; r$}
-        \STATE $q = $ \CALL{Partition}{$A, p, r$}
-        \STATE \CALL{Quicksort}{$A, p, q - 1$}
-        \STATE \CALL{Quicksort}{$A, q + 1, r$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$A, p, r$}
-    \STATE $x = A[r]$
-    \STATE $i = p - 1$
-    \FOR{$j = p$ \TO $r - 1$}
-        \IF{$A[j] &lt; x$}
-            \STATE $i = i + 1$
-            \STATE exchange
-            $A[i]$ with     $A[j]$
-        \ENDIF
-        \STATE exchange $A[i]$ with $A[r]$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</pre></div>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
-<span class="linenos"> 3</span>    <span class="nc">:title-prefix:</span> PseudoCode
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>    % This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
-<span class="linenos"> 6</span>    \begin{algorithm}
-<span class="linenos"> 7</span>    \caption{Quicksort}
-<span class="linenos"> 8</span>    \begin{algorithmic}
-<span class="linenos"> 9</span>    \PROCEDURE{Quicksort}{$A, p, r$}
-<span class="linenos">10</span>        \IF{$p &lt; r$}
-<span class="linenos">11</span>            \STATE $q = $ \CALL{Partition}{$A, p, r$}
-<span class="linenos">12</span>            \STATE \CALL{Quicksort}{$A, p, q - 1$}
-<span class="linenos">13</span>            \STATE \CALL{Quicksort}{$A, q + 1, r$}
-<span class="linenos">14</span>        \ENDIF
-<span class="linenos">15</span>    \ENDPROCEDURE
-<span class="linenos">16</span>    \PROCEDURE{Partition}{$A, p, r$}
-<span class="linenos">17</span>        \STATE $x = A[r]$
-<span class="linenos">18</span>        \STATE $i = p - 1$
-<span class="linenos">19</span>        \FOR{$j = p$ \TO $r - 1$}
-<span class="linenos">20</span>            \IF{$A[j] &lt; x$}
-<span class="linenos">21</span>                \STATE $i = i + 1$
-<span class="linenos">22</span>                \STATE exchange
-<span class="linenos">23</span>                $A[i]$ with     $A[j]$
-<span class="linenos">24</span>            \ENDIF
-<span class="linenos">25</span>            \STATE exchange $A[i]$ with $A[r]$
-<span class="linenos">26</span>        \ENDFOR
-<span class="linenos">27</span>    \ENDPROCEDURE
-<span class="linenos">28</span>    \end{algorithmic}
-<span class="linenos">29</span>    \end{algorithm}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038742332752" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
-\caption{Test text-style}
-\begin{algorithmic}
-\REQUIRE some preconditions
-\ENSURE some postconditions
-\INPUT some inputs
-\OUTPUT some outputs
-\PROCEDURE{Test-Declarations}{}
-    \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
-    \STATE font weights: {normal weight, \bfseries bold, \mdseries
-    medium, \lfseries lighter. }
-    \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
-    \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
-    footnotesize \small small \normalsize normal \large large \Large Large
-    \LARGE LARGE \huge huge \Huge Huge \normalsize
-\ENDPROCEDURE
-\PROCEDURE{Test-Commands}{}
-    \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
-    \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
-    \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
-    \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
-\ENDPROCEDURE
-\PROCEDURE{Test-Colors}{}
-% feature not implemented
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</pre></div>
-</div><div aria-labelledby="tab-2-2-1" class="sphinx-tabs-panel" hidden="true" id="panel-2-2-1" name="2-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:title-prefix:</span> 算法
-<span class="linenos"> 3</span>    <span class="nc">:indent:</span> 2.3em
-<span class="linenos"> 4</span>    <span class="nc">:caption-count:</span> 12
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span>    \begin{algorithm}
-<span class="linenos"> 7</span>    \caption{Test text-style}
-<span class="linenos"> 8</span>    \begin{algorithmic}
-<span class="linenos"> 9</span>    \REQUIRE some preconditions
-<span class="linenos">10</span>    \ENSURE some postconditions
-<span class="linenos">11</span>    \INPUT some inputs
-<span class="linenos">12</span>    \OUTPUT some outputs
-<span class="linenos">13</span>    \PROCEDURE{Test-Declarations}{}
-<span class="linenos">14</span>        \STATE font families: {\sffamily sffamily, \ttfamily ttfamily, \normalfont normalfont, \rmfamily rmfamily.}
-<span class="linenos">15</span>        \STATE font weights: {normal weight, \bfseries bold, \mdseries
-<span class="linenos">16</span>        medium, \lfseries lighter. }
-<span class="linenos">17</span>        \STATE font shapes: {\itshape itshape \scshape Small-Caps \slshape slshape \upshape upshape.}
-<span class="linenos">18</span>        \STATE font sizes: \tiny tiny \scriptsize scriptsize \footnotesize
-<span class="linenos">19</span>        footnotesize \small small \normalsize normal \large large \Large Large
-<span class="linenos">20</span>        \LARGE LARGE \huge huge \Huge Huge \normalsize
-<span class="linenos">21</span>    \ENDPROCEDURE
-<span class="linenos">22</span>    \PROCEDURE{Test-Commands}{}
-<span class="linenos">23</span>        \STATE \textnormal{textnormal,} \textrm{textrm,} \textsf{textsf,} \texttt{texttt.}
-<span class="linenos">24</span>        \STATE \textbf{textbf,} \textmd{textmd,} \textlf{textlf.}
-<span class="linenos">25</span>        \STATE \textup{textup,} \textit{textit,} \textsc{textsc,} \textsl{textsl.}
-<span class="linenos">26</span>        \STATE \uppercase{uppercase,} \lowercase{LOWERCASE.}
-<span class="linenos">27</span>    \ENDPROCEDURE
-<span class="linenos">28</span>    \PROCEDURE{Test-Colors}{}
-<span class="linenos">29</span>    % feature not implemented
-<span class="linenos">30</span>    \ENDPROCEDURE
-<span class="linenos">31</span>    \end{algorithmic}
-<span class="linenos">32</span>    \end{algorithm}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038740552528" data-line-number="true">\begin{algorithm}
-\caption{Test atoms}
-\begin{algorithmic}
-\STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
-\STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
-\STATE \textbf{Carriage return:} first line \\ second line
-\STATE \textbf{Text-symbols:} \textbackslash
-\STATE \textbf{Quote-symbols:} `single quotes&#39;, ``double quotes&#39;&#39;
-\STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
-\END{ALGORITHMIC}
-\END{ALGORITHM}</pre></div>
-</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span>    \begin{algorithm}
-<span class="linenos"> 5</span>    \caption{Test atoms}
-<span class="linenos"> 6</span>    \begin{algorithmic}
-<span class="linenos"> 7</span>    \STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
-<span class="linenos"> 8</span>    \STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
-<span class="linenos"> 9</span>    \STATE \textbf{Carriage return:} first line \\ second line
-<span class="linenos">10</span>    \STATE \textbf{Text-symbols:} \textbackslash
-<span class="linenos">11</span>    \STATE \textbf{Quote-symbols:} <span class="nv">`single quotes&#39;, `</span>`double quotes&#39;&#39;
-<span class="linenos">12</span>    \STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
-<span class="linenos">13</span>    \END{ALGORITHMIC}
-<span class="linenos">14</span>    \END{ALGORITHM}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container" id="test-control-blocks">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038741191600" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
-\caption{Test control blocks}
-\begin{algorithmic}
-\PROCEDURE{Test-If}{}
-    \IF{ &lt;cond&gt;}
-        \STATE &lt;block&gt;;
-    \ELIF{&lt;cond&gt;}
-        \STATE &lt;block&gt;;
-    \ELSE
-        \STATE &lt;block&gt;;
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Test-For}{$n$}
-    \STATE $i \gets 0$
-    \FOR{$i &lt; n$}
-        \PRINT $i$
-        \STATE $i \gets i + 1$
-    \ENDFOR
-\ENDPROCEDURE
-\PROCEDURE{Test-For-To}{$n$}
-    \STATE $i \gets 0$
-    \FOR{$i$ \TO $n$}
-        \PRINT $i$
-    \ENDFOR
-\ENDPROCEDURE
-\PROCEDURE{Test-For-DownTo}{$n$}
-    \FOR{$i \gets n$ \DOWNTO $0$}
-        \PRINT $i$
-    \ENDFOR
-\ENDPROCEDURE
-\PROCEDURE{Test-For-All}{$n$}
-    \FORALL{$i \in \{0, 1, \cdots, n\}$}
-        \PRINT $i$
-    \ENDFOR
-\ENDPROCEDURE
-\PROCEDURE{Test-While}{$n$}
-    \STATE $i \gets 0$
-    \WHILE{$i &lt; n$}
-        \PRINT $i$
-        \STATE $i \gets i + 1$
-    \ENDWHILE
-\ENDPROCEDURE
-\PROCEDURE{Test-Repeat}{$n$}
-    \STATE $i \gets 0$
-    \REPEAT
-        \PRINT $i$
-        \STATE $i \gets i + 1$
-    \UNTIL{$i&gt;n$}
-\ENDPROCEDURE
-\PROCEDURE{Test-Break-Continue}{$n$}
-    \FOR{$i = 0$ \TO $2n$}
-        \IF{$i &lt; n/2$}
-            \CONTINUE
-        \ELIF{$i &gt; n$}
-            \BREAK
-        \ENDIF
-        \PRINT $i$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</pre></div>
-</div><div aria-labelledby="tab-4-4-1" class="sphinx-tabs-panel" hidden="true" id="panel-4-4-1" name="4-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:linenos:</span>
-<span class="linenos"> 3</span>    <span class="nc">:line-number-punc:</span> :
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>    \begin{algorithm}
-<span class="linenos"> 6</span>    \caption{Test control blocks}
-<span class="linenos"> 7</span>    \begin{algorithmic}
-<span class="linenos"> 8</span>    \PROCEDURE{Test-If}{}
-<span class="linenos"> 9</span>        \IF{ &lt;cond&gt;}
-<span class="linenos">10</span>            \STATE &lt;block&gt;;
-<span class="linenos">11</span>        \ELIF{&lt;cond&gt;}
-<span class="linenos">12</span>            \STATE &lt;block&gt;;
-<span class="linenos">13</span>        \ELSE
-<span class="linenos">14</span>            \STATE &lt;block&gt;;
-<span class="linenos">15</span>        \ENDIF
-<span class="linenos">16</span>    \ENDPROCEDURE
-<span class="linenos">17</span>    \PROCEDURE{Test-For}{$n$}
-<span class="linenos">18</span>        \STATE $i \gets 0$
-<span class="linenos">19</span>        \FOR{$i &lt; n$}
-<span class="linenos">20</span>            \PRINT $i$
-<span class="linenos">21</span>            \STATE $i \gets i + 1$
-<span class="linenos">22</span>        \ENDFOR
-<span class="linenos">23</span>    \ENDPROCEDURE
-<span class="linenos">24</span>    \PROCEDURE{Test-For-To}{$n$}
-<span class="linenos">25</span>        \STATE $i \gets 0$
-<span class="linenos">26</span>        \FOR{$i$ \TO $n$}
-<span class="linenos">27</span>            \PRINT $i$
-<span class="linenos">28</span>        \ENDFOR
-<span class="linenos">29</span>    \ENDPROCEDURE
-<span class="linenos">30</span>    \PROCEDURE{Test-For-DownTo}{$n$}
-<span class="linenos">31</span>        \FOR{$i \gets n$ \DOWNTO $0$}
-<span class="linenos">32</span>            \PRINT $i$
-<span class="linenos">33</span>        \ENDFOR
-<span class="linenos">34</span>    \ENDPROCEDURE
-<span class="linenos">35</span>    \PROCEDURE{Test-For-All}{$n$}
-<span class="linenos">36</span>        \FORALL{$i \in \{0, 1, \cdots, n\}$}
-<span class="linenos">37</span>            \PRINT $i$
-<span class="linenos">38</span>        \ENDFOR
-<span class="linenos">39</span>    \ENDPROCEDURE
-<span class="linenos">40</span>    \PROCEDURE{Test-While}{$n$}
-<span class="linenos">41</span>        \STATE $i \gets 0$
-<span class="linenos">42</span>        \WHILE{$i &lt; n$}
-<span class="linenos">43</span>            \PRINT $i$
-<span class="linenos">44</span>            \STATE $i \gets i + 1$
-<span class="linenos">45</span>        \ENDWHILE
-<span class="linenos">46</span>    \ENDPROCEDURE
-<span class="linenos">47</span>    \PROCEDURE{Test-Repeat}{$n$}
-<span class="linenos">48</span>        \STATE $i \gets 0$
-<span class="linenos">49</span>        \REPEAT
-<span class="linenos">50</span>            \PRINT $i$
-<span class="linenos">51</span>            \STATE $i \gets i + 1$
-<span class="linenos">52</span>        \UNTIL{$i&gt;n$}
-<span class="linenos">53</span>    \ENDPROCEDURE
-<span class="linenos">54</span>    \PROCEDURE{Test-Break-Continue}{$n$}
-<span class="linenos">55</span>        \FOR{$i = 0$ \TO $2n$}
-<span class="linenos">56</span>            \IF{$i &lt; n/2$}
-<span class="linenos">57</span>                \CONTINUE
-<span class="linenos">58</span>            \ELIF{$i &gt; n$}
-<span class="linenos">59</span>                \BREAK
-<span class="linenos">60</span>            \ENDIF
-<span class="linenos">61</span>            \PRINT $i$
-<span class="linenos">62</span>        \ENDFOR
-<span class="linenos">63</span>    \ENDPROCEDURE
-<span class="linenos">64</span>    \end{algorithmic}
-<span class="linenos">65</span>    \end{algorithm}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038742603664" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="+" data-no-end="true">\begin{algorithm}
-\caption{Test statements and comments}
-\begin{algorithmic}
-\PROCEDURE{Test-Statements}{}
-    \STATE This line is a normal statement
-    \PRINT \texttt{`this is print statement&#39;}
-    \RETURN $retval$
-\ENDPROCEDURE
-
-\PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
-    \STATE a statement \COMMENT{inline comment}
-    \STATE \COMMENT{line comment}
-    \IF{some condition}\COMMENT{comment for if}
-        \RETURN \TRUE \COMMENT{another inline comment}
-    \ELSE \COMMENT{comment for else}
-        \RETURN \FALSE \COMMENT{yet another inline comment}
-    \ENDIF
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</pre></div>
-</div><div aria-labelledby="tab-5-5-1" class="sphinx-tabs-panel" hidden="true" id="panel-5-5-1" name="5-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:comment-delimiter:</span> %
-<span class="linenos"> 3</span>    <span class="nc">:no-end:</span>
-<span class="linenos"> 4</span>    <span class="nc">:linenos:</span>
-<span class="linenos"> 5</span>    <span class="nc">:line-number-punc:</span> +
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span>    \begin{algorithm}
-<span class="linenos"> 8</span>    \caption{Test statements and comments}
-<span class="linenos"> 9</span>    \begin{algorithmic}
-<span class="linenos">10</span>    \PROCEDURE{Test-Statements}{}
-<span class="linenos">11</span>        \STATE This line is a normal statement
-<span class="linenos">12</span>        \PRINT \texttt{`this is print statement&#39;}
-<span class="linenos">13</span>        \RETURN $retval$
-<span class="linenos">14</span>    \ENDPROCEDURE
-<span class="linenos">15</span>
-<span class="linenos">16</span>    \PROCEDURE{Test-Comments}{} \COMMENT{comment for procedure}
-<span class="linenos">17</span>        \STATE a statement \COMMENT{inline comment}
-<span class="linenos">18</span>        \STATE \COMMENT{line comment}
-<span class="linenos">19</span>        \IF{some condition}\COMMENT{comment for if}
-<span class="linenos">20</span>            \RETURN \TRUE \COMMENT{another inline comment}
-<span class="linenos">21</span>        \ELSE \COMMENT{comment for else}
-<span class="linenos">22</span>            \RETURN \FALSE \COMMENT{yet another inline comment}
-<span class="linenos">23</span>        \ENDIF
-<span class="linenos">24</span>    \ENDPROCEDURE
-<span class="linenos">25</span>    \end{algorithmic}
-<span class="linenos">26</span>    \end{algorithm}
-</pre></div>
-</div>
-</div></div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140038741755120" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
-% to Algorithms (3rd edition)
-\begin{algorithm}
-\caption{Quicksort}
-\begin{algorithmic}
-\PROCEDURE{Quicksort}{$A, p, r$}
-    \IF{$p &lt; r$}
-        \STATE $q = $ \CALL{Partition}{$A, p, r$}
-        \STATE \CALL{Quicksort}{$A, p, q - 1$}
-        \STATE \CALL{Quicksort}{$A, q + 1, r$}
-    \ENDIF
-\ENDPROCEDURE
-\PROCEDURE{Partition}{$A, p, r$}
-    \STATE $x = A[r]$
-    \STATE $i = p - 1$
-    \FOR{$j = p$ \TO $r - 1$}
-        \IF{$A[j] &lt; x$}
-            \STATE $i = i + 1$
-            \STATE exchange
-            $A[i]$ with $A[j]$
-        \ENDIF
-        \STATE exchange $A[i]$ with $A[r]$
-    \ENDFOR
-\ENDPROCEDURE
-\end{algorithmic}
-\end{algorithm}</pre></div>
-</div><div aria-labelledby="tab-6-6-1" class="sphinx-tabs-panel" hidden="true" id="panel-6-6-1" name="6-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
-<span class="linenos"> 2</span>    <span class="nc">:indent:</span> 5em
-<span class="linenos"> 3</span>    <span class="nc">:linenos:</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span>    % This quicksort algorithm is extracted from Chapter 7, Introduction
-<span class="linenos"> 6</span>    % to Algorithms (3rd edition)
-<span class="linenos"> 7</span>    \begin{algorithm}
-<span class="linenos"> 8</span>    \caption{Quicksort}
-<span class="linenos"> 9</span>    \begin{algorithmic}
-<span class="linenos">10</span>    \PROCEDURE{Quicksort}{$A, p, r$}
-<span class="linenos">11</span>        \IF{$p &lt; r$}
-<span class="linenos">12</span>            \STATE $q = $ \CALL{Partition}{$A, p, r$}
-<span class="linenos">13</span>            \STATE \CALL{Quicksort}{$A, p, q - 1$}
-<span class="linenos">14</span>            \STATE \CALL{Quicksort}{$A, q + 1, r$}
-<span class="linenos">15</span>        \ENDIF
-<span class="linenos">16</span>    \ENDPROCEDURE
-<span class="linenos">17</span>    \PROCEDURE{Partition}{$A, p, r$}
-<span class="linenos">18</span>        \STATE $x = A[r]$
-<span class="linenos">19</span>        \STATE $i = p - 1$
-<span class="linenos">20</span>        \FOR{$j = p$ \TO $r - 1$}
-<span class="linenos">21</span>            \IF{$A[j] &lt; x$}
-<span class="linenos">22</span>                \STATE $i = i + 1$
-<span class="linenos">23</span>                \STATE exchange
-<span class="linenos">24</span>                $A[i]$ with $A[j]$
-<span class="linenos">25</span>            \ENDIF
-<span class="linenos">26</span>            \STATE exchange $A[i]$ with $A[r]$
-<span class="linenos">27</span>        \ENDFOR
-<span class="linenos">28</span>    \ENDPROCEDURE
-<span class="linenos">29</span>    \end{algorithmic}
-<span class="linenos">30</span>    \end{algorithm}
-</pre></div>
-</div>
-</div></div>
-</section>
-</section>
-</section>
-
-
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">sphinxcontrib-pseudocode2</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &#169;2021, Zeyuan Hu; 2025, WEN Hao.
-      
-      |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.4.7</a>
-      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+    </body>
 </html>

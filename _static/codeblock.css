@@ -1,0 +1,108 @@
+.code-toolbar {
+  position: absolute;
+  top: 0.35em;
+  right: 0.35em;
+  display: flex;
+  gap: 0.35em;
+  z-index: 50;
+  pointer-events: auto;
+}
+
+.code-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(170, 170, 170, 0.6);
+  border-radius: 6px;
+  padding: 5px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.12s ease-in-out;
+  min-width: 28px;
+  min-height: 28px;
+  box-sizing: border-box;
+}
+.code-icon-btn svg {
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  stroke: currentColor;
+  fill: none;
+}
+.code-icon-btn:hover {
+  background-color: rgba(245, 245, 245, 1);
+  transform: translateY(-1px);
+}
+.code-icon-btn.active {
+  background-color: rgba(230, 250, 230, 1);
+  border-color: rgba(160, 220, 160, 1);
+}
+
+html[data-theme="dark"] .code-icon-btn {
+  background-color: rgba(20, 20, 20, 0.88);
+  border-color: rgba(70, 70, 70, 0.6);
+  color: #ddd;
+}
+html[data-theme="dark"] .code-icon-btn:hover {
+  background-color: rgba(40, 40, 40, 1);
+}
+
+.copy-tooltip {
+  position: fixed;
+  transform: translateX(-50%);
+  background: rgba(25, 25, 25, 0.95);
+  color: #fff;
+  font-size: 0.78em;
+  padding: 6px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+  z-index: 9999;
+  white-space: nowrap;
+}
+.copy-tooltip.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-3px);
+}
+
+div.highlight {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+div.highlight pre {
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0;
+}
+
+div.highlight .highlighttable td.code pre.wrapped,
+div.highlight pre.wrapped {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+div.highlight .highlighttable td.linenos {
+  white-space: pre;
+  vertical-align: top;
+  padding-right: 1em;
+}
+
+div.highlight .highlighttable td {
+  vertical-align: top;
+}
+
+div.highlight pre.wrapped code,
+div.highlight pre.wrapped {
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .code-toolbar {
+    right: 0.2em;
+  }
+}
