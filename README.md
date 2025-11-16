@@ -39,11 +39,11 @@ pseudocode2_math_engine = "mathjax3"
 #    Covers all pseudocode.js native options (unified project-wide style)
 pseudocode2_options = {
     "lineNumber": True,           # Global default: enable line numbering
-    "lineNumberPunc": " | ",       # Punctuation after line numbers (e.g., "1 | ")
-    "commentDelimiter": "//",     # Global default comment delimiter
+    "lineNumberPunc": " | ",      # Punctuation after line numbers (e.g., "1 | ")
+    "commentDelimiter": "#",      # Global default comment delimiter
     "noEnd": False,               # Global default: show "END" for control blocks
     "titlePrefix": "PseudoCode",  # Global default title prefix (replace "Algorithm")
-    "captionCount": True          # Global default: enable auto-increment numbering
+    "scopeLines": True,           # Global default: enable scope line highlighting
 }
 ```
 
@@ -84,18 +84,7 @@ Pseudocode rendering is extended with practical options (all compatible with pse
 
 ### Global Configuration via ``pseudocode2_options``
 
-Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)). The following example shows how to set global options in `conf.py`:
-
-```python
-pseudocode2_options = {
-    "lineNumber": True,           # Global default: enable line numbering
-    "lineNumberPunc": " | ",      # Punctuation after line numbers (e.g., "1 | ")
-    "commentDelimiter": "#",      # Global default comment delimiter
-    "noEnd": False,               # Global default: show "END" for control blocks
-    "titlePrefix": "PseudoCode",  # Global default title prefix (replace "Algorithm")
-    "scopeLines": True,           # Global default: enable scope line highlighting
-}
-```
+Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)). See also the example in the [Quick Start section](#quick-start).
 
 **Priority Rule**:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default
