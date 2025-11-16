@@ -235,7 +235,7 @@ def add_rendering_script(app: Sphinx):
                 }}
 
                 pseudocode.renderClass('pseudocode', {js_opts_str});
-                pseudocode.renderClass("scopeline-pseudocode", { js_opts_scopelines_str });
+                pseudocode.renderClass("scopeline-pseudocode", {js_opts_scopelines_str});
                 console.log("pseudocode2: Pseudocode rendered");
 
                 if (window.MathJax) {{
