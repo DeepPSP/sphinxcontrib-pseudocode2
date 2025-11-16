@@ -42,9 +42,12 @@ class PCodeDirective(SphinxDirective):
     option_spec = {
         "linenos": flag,
         "indent": unchanged,
+        "no-linenos": flag,
         "comment-delimiter": unchanged,
         "line-number-punc": unchanged,
         "no-end": flag,
+        "scopelines": flag,
+        "no-scopelines": flag,
         "caption-count": unchanged,
         "title-prefix": unchanged,
     }
@@ -54,7 +57,19 @@ class PCodeDirective(SphinxDirective):
         container = nodes.container(classes=["pseudocode-container"])
         data_attrs = self._get_data_attributes()
 
-        pre_html = f'<pre class="pseudocode" id="pseudocode-{id(self)}" {data_attrs}>'
+        env = getattr(self, "env", None)
+        app = getattr(env, "app", None) if env is not None else None
+        global_opts = getattr(app.config, "pseudocode2_options", {}) if app is not None else {}
+
+        if "no-scopelines" in self.options:
+            use_scopelines = False
+        elif "scopelines" in self.options:
+            use_scopelines = True
+        else:
+            # fallback to global default
+            use_scopelines = bool(global_opts.get("scopeLines", False))
+        class_ = "scopeline-pseudocode" if use_scopelines else "pseudocode"
+        pre_html = f'<pre class="{class_}" id="pseudocode-{id(self)}" {data_attrs}>'
         pre_node = nodes.raw(text=pre_html, format="html")
         container += pre_node
 
@@ -69,8 +84,12 @@ class PCodeDirective(SphinxDirective):
 
     def _get_data_attributes(self):
         attrs = []
+        if "no-linenos" in self.options:
+            attrs.append('data-line-number="false"')
+        elif "linenos" in self.options:
+            attrs.append('data-line-number="true"')
+
         option_mapping = {
-            "linenos": ("line-number", lambda v: "true"),
             "indent": ("indent-size", lambda v: v),
             "comment-delimiter": ("comment-delimiter", lambda v: v),
             "line-number-punc": ("line-number-punc", lambda v: v),
@@ -188,6 +207,7 @@ def add_rendering_script(app: Sphinx):
     """Core rendering logic: ensure MathJax is fully ready, then render pseudocode, and force render formulas"""
     global_opts = app.config.pseudocode2_options or {}
     js_opts = []
+    js_opts_scopelines = []
     for k, v in global_opts.items():
         if isinstance(v, bool):
             js_opts.append(f"{k}: {str(v).lower()}")
@@ -195,7 +215,14 @@ def add_rendering_script(app: Sphinx):
             js_opts.append(f'{k}: "{v}"')
         else:
             js_opts.append(f"{k}: {v}")
+        if k != "scopeLines":
+            js_opts_scopelines.append(js_opts[-1])
+        else:
+            # remove scopeLines option for pseudocode class
+            js_opts.pop()
+    js_opts_scopelines = js_opts + ["scopeLines: true"]
     js_opts_str = "{" + ", ".join(js_opts) + "}" if js_opts else ""
+    js_opts_scopelines_str = "{" + ", ".join(js_opts_scopelines) + "}" if js_opts_scopelines else ""
 
     app.add_js_file(
         None,
@@ -208,6 +235,7 @@ def add_rendering_script(app: Sphinx):
                 }}
 
                 pseudocode.renderClass('pseudocode', {js_opts_str});
+                pseudocode.renderClass("scopeline-pseudocode", { js_opts_scopelines_str });
                 console.log("pseudocode2: Pseudocode rendered");
 
                 if (window.MathJax) {{

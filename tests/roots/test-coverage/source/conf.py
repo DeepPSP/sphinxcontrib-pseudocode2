@@ -7,6 +7,7 @@ pseudocode2_options = {
     "no-end": True,
     "caption-count": 99,
     "title-prefix": "Demo",
+    "scopeLines": True,
 }
 html_static_path = ["_static"]
 

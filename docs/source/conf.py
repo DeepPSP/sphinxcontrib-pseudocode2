@@ -40,11 +40,12 @@ numfig = True
 pseudocode2_math_engine = "katex"
 
 pseudocode2_options = {
-    "lineNumber": False,  # Global default: enable line numbering
+    "lineNumber": True,  # Global default: enable line numbering
     "lineNumberPunc": " | ",  # Punctuation after line numbers (e.g., "1 | ")
     "commentDelimiter": "#",  # Global default comment delimiter
-    "noEnd": False,  # Global default: show "END" for control blocks
+    "noEnd": False,  # Global default: show no "END" for control blocks
     "titlePrefix": "PseudoCode",  # Global default title prefix (replace "Algorithm")
+    "scopeLines": True,  # Global default: enable scope lines
 }
 
 
