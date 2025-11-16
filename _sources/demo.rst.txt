@@ -172,6 +172,7 @@
 
         .. pcode::
             :linenos:
+            :title-prefix: Algorithm
 
             \begin{algorithm}
             \caption{Test atoms}
@@ -191,6 +192,7 @@
 
             .. pcode::
                 :linenos:
+                :title-prefix: Algorithm
 
                 \begin{algorithm}
                 \caption{Test atoms}
@@ -212,6 +214,7 @@
 
         .. pcode::
             :linenos:
+            :no-scopelines:
             :line-number-punc: :
 
             \begin{algorithm}
@@ -282,6 +285,7 @@
 
             .. pcode::
                 :linenos:
+                :no-scopelines:
                 :line-number-punc: :
 
                 \begin{algorithm}
@@ -354,7 +358,7 @@
             :comment-delimiter: %
             :no-end:
             :linenos:
-            :line-number-punc: +
+            :line-number-punc: !
 
             \begin{algorithm}
             \caption{Test statements and comments}
@@ -385,7 +389,7 @@
                 :comment-delimiter: %
                 :no-end:
                 :linenos:
-                :line-number-punc: +
+                :line-number-punc: !
 
                 \begin{algorithm}
                 \caption{Test statements and comments}
@@ -414,6 +418,7 @@
 
         .. pcode::
             :indent: 5em
+            :no-scopelines:
             :linenos:
 
             % This quicksort algorithm is extracted from Chapter 7, Introduction
@@ -449,6 +454,7 @@
 
             .. pcode::
                 :indent: 5em
+                :no-scopelines:
                 :linenos:
 
                 % This quicksort algorithm is extracted from Chapter 7, Introduction

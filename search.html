@@ -287,7 +287,8 @@
                     console.log("pseudocode2: MathJax is ready");
                 }
 
-                pseudocode.renderClass('pseudocode', {lineNumber: false, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                pseudocode.renderClass('pseudocode', {lineNumber: true, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                pseudocode.renderClass("scopeline-pseudocode", {lineNumber: true, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode", scopeLines: true});
                 console.log("pseudocode2: Pseudocode rendered");
 
                 if (window.MathJax) {
@@ -322,7 +323,8 @@
                     console.log("pseudocode2: MathJax is ready");
                 }
 
-                pseudocode.renderClass('pseudocode', {lineNumber: false, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                pseudocode.renderClass('pseudocode', {lineNumber: true, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode"});
+                pseudocode.renderClass("scopeline-pseudocode", {lineNumber: true, lineNumberPunc: " | ", commentDelimiter: "#", noEnd: false, titlePrefix: "PseudoCode", scopeLines: true});
                 console.log("pseudocode2: Pseudocode rendered");
 
                 if (window.MathJax) {

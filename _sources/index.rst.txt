@@ -45,17 +45,31 @@ Configuration Options
 Pseudocode rendering is extended with practical options (all compatible with pseudocode.js native capabilities):
 
 - ``linenos``: Enable line numbering
+- ``no-linenos``: Disable line numbering
 - ``indent``: Set indentation (seems working only for ``em``, no other units) for code blocks, default: ``1.2em``
 - ``comment-delimiter``: Customize comment delimiters, default: ``//``
 - ``line-number-punc``: Set line number punctuation, default: ``:``
 - ``no-end``: Omit the ``END`` keyword for control blocks
 - ``title-prefix``: Customize the algorithm title prefix (e.g., ``PseudoCode`` instead of default ``Algorithm``)
 - ``caption-count``: Reset the caption counter to this number
+- ``scopelines``: Highlight scope lines (those with control block starters like IF, FOR, WHILE, etc.)
+- ``no-scopelines``: Disable scope line highlighting
 
 Global Configuration via ``pseudocode2_options``
 =====================================================
 
-Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)).
+Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)). The following example shows how to set global options in `conf.py`:
+
+.. code-block:: python
+
+    pseudocode2_options = {
+        "lineNumber": True,           # Global default: enable line numbering
+        "lineNumberPunc": " | ",      # Punctuation after line numbers (e.g., "1 | ")
+        "commentDelimiter": "#",      # Global default comment delimiter
+        "noEnd": False,               # Global default: show "END" for control blocks
+        "titlePrefix": "PseudoCode",  # Global default title prefix (replace "Algorithm")
+        "scopeLines": True,           # Global default: enable scope line highlighting
+    }
 
 **Priority Rule**:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default
