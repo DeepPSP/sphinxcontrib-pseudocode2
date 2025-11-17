@@ -77,7 +77,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 Tips
 =====================================================
 
-- Custom (Manual) indentation Control: ``psuedo.js`` and ``algorithmic`` do not have a built-in way (a single command
+- Custom (Manual) indentation Control: ``pseudocode.js`` and ``algorithmic`` do not have a built-in way (a single command
   or a pair of commands) to set custom indentation levels. However, you can manually adjust indentation by the following
   workaround: use LaTeX's horizontal space command **inside** a math environment. Specifically, use
 
