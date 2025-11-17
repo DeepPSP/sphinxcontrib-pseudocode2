@@ -60,6 +60,7 @@ class PCodeDirective(SphinxDirective):
         env = getattr(self, "env", None)
         app = getattr(env, "app", None) if env is not None else None
         global_opts = getattr(app.config, "pseudocode2_options", {}) if app is not None else {}
+        global_opts = global_opts if global_opts is not None else {}
 
         if "no-scopelines" in self.options:
             use_scopelines = False
