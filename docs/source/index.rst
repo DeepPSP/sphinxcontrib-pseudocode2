@@ -58,7 +58,7 @@ Pseudocode rendering is extended with practical options (all compatible with pse
 Global Configuration via ``pseudocode2_options``
 =====================================================
 
-Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js?tab=readme-ov-file#options)). The following example shows how to set global options in `conf.py`:
+Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see the ``Options`` section of [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)). The following example shows how to set global options in `conf.py`:
 
 .. code-block:: python
 

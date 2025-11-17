@@ -84,7 +84,7 @@ Pseudocode rendering is extended with practical options (all compatible with pse
 
 ### Global Configuration via ``pseudocode2_options``
 
-Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js?tab=readme-ov-file#options)). See also the example in the [Quick Start section](#quick-start).
+Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see the ``Options`` section of [pseudocode.js](https://github.com/SaswatPadhi/pseudocode.js)). See also the example in the [Quick Start section](#quick-start).
 
 **Priority Rule**:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default.
