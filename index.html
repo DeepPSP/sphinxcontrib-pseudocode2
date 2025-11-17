@@ -267,7 +267,7 @@ You can change this behavior by overriding the corresponding string of <code cla
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">linenos</span></code>: Enable line numbering</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">no-linenos</span></code>: Disable line numbering</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code>: Set indentation (seems working only for <code class="docutils literal notranslate"><span class="pre">em</span></code>, no other units) for code blocks, default: <code class="docutils literal notranslate"><span class="pre">1.2em</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indent</span></code>: Set indentation (working only for <code class="docutils literal notranslate"><span class="pre">em</span></code>, no other units) for code blocks, default: <code class="docutils literal notranslate"><span class="pre">1.2em</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">comment-delimiter</span></code>: Customize comment delimiters, default: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">line-number-punc</span></code>: Set line number punctuation, default: <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">no-end</span></code>: Omit the <code class="docutils literal notranslate"><span class="pre">END</span></code> keyword for control blocks</p></li>
@@ -279,7 +279,7 @@ You can change this behavior by overriding the corresponding string of <code cla
 </section>
 <section id="global-configuration-via-pseudocode2-options">
 <h3>Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code><a class="headerlink" href="#global-configuration-via-pseudocode2-options" title="Link to this heading">¶</a></h3>
-<p>Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see [pseudocode.js](<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js">https://github.com/SaswatPadhi/pseudocode.js</a>)). The following example shows how to set global options in <cite>conf.py</cite>:</p>
+<p>Pseudocode rendering styles can be unified across the entire project using a single global configuration (supports all pseudocode.js native parameters, see the <code class="docutils literal notranslate"><span class="pre">Options</span></code> section of [pseudocode.js](<a class="reference external" href="https://github.com/SaswatPadhi/pseudocode.js">https://github.com/SaswatPadhi/pseudocode.js</a>)). The following example shows how to set global options in <cite>conf.py</cite>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pseudocode2_options</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;lineNumber&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>           <span class="c1"># Global default: enable line numbering</span>
     <span class="s2">&quot;lineNumberPunc&quot;</span><span class="p">:</span> <span class="s2">&quot; | &quot;</span><span class="p">,</span>      <span class="c1"># Punctuation after line numbers (e.g., &quot;1 | &quot;)</span>
@@ -293,12 +293,26 @@ You can change this behavior by overriding the corresponding string of <code cla
 <p><strong>Priority Rule</strong>:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) &gt; pseudocode2_options (global in conf.py) &gt; pseudocode.js default</p>
 </section>
+<section id="tips">
+<h3>Tips<a class="headerlink" href="#tips" title="Link to this heading">¶</a></h3>
+<ul>
+<li><p>Custom (Manual) indentation Control: <code class="docutils literal notranslate"><span class="pre">pseudocode.js</span></code> and <code class="docutils literal notranslate"><span class="pre">algorithmic</span></code> do not have a built-in way (a single command
+or a pair of commands) to set custom indentation levels. However, you can manually adjust indentation by the following
+workaround: use LaTeX’s horizontal space command <strong>inside</strong> a math environment. Specifically, use</p>
+<p><code class="docutils literal notranslate"><span class="pre">$\hspace{&lt;length&gt;}$</span></code> where <code class="docutils literal notranslate"><span class="pre">&lt;length&gt;</span></code> is a LaTeX length (e.g., <code class="docutils literal notranslate"><span class="pre">2em</span></code>, <code class="docutils literal notranslate"><span class="pre">1cm</span></code>, etc.). For example:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\STATE</span> <span class="s">$</span><span class="nv">\hspace</span><span class="nb">{</span><span class="m">2</span><span class="nb">em}</span><span class="s">$</span> This line is indented by 2em
+</pre></div>
+</div>
+<p>See also <a class="reference internal" href="#test-atoms-algo"><span class="std std-ref">this example</span></a></p>
+</li>
+</ul>
+</section>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container" id="hello-world-algo">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140369257101968" >\begin{algorithmic}
+<pre class="scopeline-pseudocode" id="pseudocode-139687362610848" >\begin{algorithmic}
 \PRINT \texttt{&#39;hello world&#39;}
 \end{algorithmic}</pre></div>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
@@ -311,7 +325,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </div></div>
 <div class="sphinx-tabs docutils container" id="quick-sort">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140369257034608" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+<pre class="scopeline-pseudocode" id="pseudocode-139687362456784" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
 \begin{algorithm}
 \caption{Quicksort}
 \begin{algorithmic}
@@ -370,7 +384,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140369256249376" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-139687362611952" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
 \caption{Test text-style}
 \begin{algorithmic}
 \REQUIRE some preconditions
@@ -432,14 +446,16 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </pre></div>
 </div>
 </div></div>
-<div class="sphinx-tabs docutils container">
+<div class="sphinx-tabs docutils container" id="test-atoms-algo">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140369254580336" data-line-number="true" data-title-prefix="Algorithm">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-139687363174560" data-line-number="true" data-title-prefix="Algorithm">\begin{algorithm}
 \caption{Test atoms}
 \begin{algorithmic}
 \STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
 \STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
 \STATE \textbf{Carriage return:} first line \\ second line
+\STATE $\hspace{2em}$ This line is indented by 2em
+\STATE $\hspace{2em}$ This line is indented by 2em
 \STATE \textbf{Text-symbols:} \textbackslash
 \STATE \textbf{Quote-symbols:} `single quotes&#39;, ``double quotes&#39;&#39;
 \STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
@@ -465,7 +481,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </div></div>
 <div class="sphinx-tabs docutils container" id="test-control-blocks">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140369257037344" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
+<pre class="pseudocode" id="pseudocode-139687363174848" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
 \caption{Test control blocks}
 \begin{algorithmic}
 \PROCEDURE{Test-If}{}
@@ -597,7 +613,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140369256827344" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="!" data-no-end="true">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-139687362079232" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="!" data-no-end="true">\begin{algorithm}
 \caption{Test statements and comments}
 \begin{algorithmic}
 \PROCEDURE{Test-Statements}{}
@@ -648,7 +664,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140369256828400" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
+<pre class="pseudocode" id="pseudocode-139687361774784" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
 % to Algorithms (3rd edition)
 \begin{algorithm}
 \caption{Quicksort}
@@ -752,6 +768,7 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
 <li><a class="reference internal" href="#features">Features</a><ul>
 <li><a class="reference internal" href="#configuration-options">Configuration Options</a></li>
 <li><a class="reference internal" href="#global-configuration-via-pseudocode2-options">Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code></a></li>
+<li><a class="reference internal" href="#tips">Tips</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#examples">Examples</a></li>

@@ -166,6 +166,8 @@
                 \end{algorithmic}
                 \end{algorithm}
 
+.. _test-atoms-algo:
+
 .. tabs::
 
     .. tab:: Rendered
@@ -180,6 +182,8 @@
             \STATE \textbf{Specials:} \{ \} \$ \& \# \% \_
             \STATE \textbf{Bools:} \AND \OR \NOT \TRUE \FALSE
             \STATE \textbf{Carriage return:} first line \\ second line
+            \STATE $\hspace{2em}$ This line is indented by 2em
+            \STATE $\hspace{2em}$ This line is indented by 2em
             \STATE \textbf{Text-symbols:} \textbackslash
             \STATE \textbf{Quote-symbols:} `single quotes', ``double quotes''
             \STATE \textbf{Math:} $(\mathcal{C}_m)$, $i \gets i + 1$, $E=mc^2$, \( x^n + y^n = z^n \), $\$$, \(\$\)
