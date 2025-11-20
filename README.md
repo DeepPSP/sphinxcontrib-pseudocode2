@@ -100,3 +100,13 @@ Configuration priority (higher priority overrides lower): Directive option (e.g.
   ```text
   \STATE $\hspace{2em}$ This line is indented by 2em
   ```
+- Enhance comment layout with CSS: You can customize the comment style (e.g., color, spacing) by adding CSS rules
+  in your Sphinx theme's custom CSS file (e.g., ``_static/css/custom.css``):
+
+  ```css
+  .ps-root .ps-comment {
+      white-space: pre-wrap;  /* Preserve whitespace in "commentDelimiter" in `pseudocode2_options` */
+      margin-left: 1.3em;     /* Spacing between code and comment */
+      color: blue;            /* Change comment color */
+  }
+  ```
