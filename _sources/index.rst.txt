@@ -87,7 +87,17 @@ Tips
 
     \STATE $\hspace{2em}$ This line is indented by 2em
 
-  See also :ref:`this example <test-atoms-algo>`
+  See also :ref:`this example <test-atoms-algo>`.
+- Enhance comment layout with CSS: You can customize the comment style (e.g., color, spacing) by adding CSS rules
+  in your Sphinx theme's custom CSS file (e.g., ``_static/css/custom.css``):
+
+  .. code-block:: css
+
+    .ps-root .ps-comment {
+        white-space: pre-wrap;  /* Preserve whitespace in "commentDelimiter" in `pseudocode2_options` */
+        margin-left: 1.3em;     /* Spacing between code and comment */
+        color: blue;            /* Change comment color */
+    }
 
 ########
 Examples
