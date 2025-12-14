@@ -263,7 +263,7 @@ def add_rendering_script(app: Sphinx):
 
 def setup(app: Sphinx):
     """Sphinx extension entry point"""
-    app.add_config_value("pseudocode2_math_engine", "mathjax3", "html", types=[str])
+    app.add_config_value("pseudocode2_math_engine", "katex", "html", types=[str])
     app.add_config_value("pseudocode2_options", None, "html", types=[dict])
 
     app.add_directive("pcode", PCodeDirective)
