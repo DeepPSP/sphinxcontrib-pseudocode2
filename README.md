@@ -31,8 +31,8 @@ extensions = [
 ]
 
 # -------------------------- Optional Configuration --------------------------
-# 1. Specify math engine (default: "mathjax3", alternative: "katex")
-pseudocode2_math_engine = "mathjax3"
+# 1. Specify math engine (default: "katex", alternative: "mathjax3")
+pseudocode2_math_engine = "katex"
 
 # 2. Global pseudocode.js configuration (pseudocode2_options)
 #    All parameters are directly passed to pseudocode.renderClass()
