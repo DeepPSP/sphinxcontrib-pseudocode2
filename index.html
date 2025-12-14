@@ -276,6 +276,29 @@ You can change this behavior by overriding the corresponding string of <code cla
 <li><p><code class="docutils literal notranslate"><span class="pre">scopelines</span></code>: Highlight scope lines (those with control block starters like IF, FOR, WHILE, etc.)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">no-scopelines</span></code>: Disable scope line highlighting</p></li>
 </ul>
+<p>Typical usage example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
+    <span class="nc">:linenos:</span>
+    <span class="nc">:indent:</span> 1.5em
+    <span class="nc">:comment-delimiter:</span> &quot;#&quot;
+    <span class="nc">:line-number-punc:</span> &quot; | &quot;
+    <span class="nc">:no-end:</span>
+    <span class="nc">:title-prefix:</span> &quot;PseudoCode&quot;
+    <span class="nc">:scopelines:</span>
+
+    \begin{algorithm}
+    \caption{My Sample Algorithm}
+    \begin{algorithmic}
+    \STATE Initialize variables
+    \FOR{each item in list}
+        \IF{item is valid}
+            \STATE Process item  # This is a comment
+        \ENDIF
+    \ENDFOR
+    \end{algorithmic}
+    \end{algorithm}
+</pre></div>
+</div>
 </section>
 <section id="global-configuration-via-pseudocode2-options">
 <h3>Global Configuration via <code class="docutils literal notranslate"><span class="pre">pseudocode2_options</span></code><a class="headerlink" href="#global-configuration-via-pseudocode2-options" title="Link to this heading">¶</a></h3>
@@ -292,6 +315,10 @@ You can change this behavior by overriding the corresponding string of <code cla
 </div>
 <p><strong>Priority Rule</strong>:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) &gt; pseudocode2_options (global in conf.py) &gt; pseudocode.js default</p>
+<p>Another configurable option is <code class="docutils literal notranslate"><span class="pre">pseudocode2_math_engine</span></code> (set in <cite>conf.py</cite>), which specifies the math rendering engine to use (either <code class="docutils literal notranslate"><span class="pre">&quot;katex&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;mathjax3&quot;</span></code>; default is <code class="docutils literal notranslate"><span class="pre">&quot;katex&quot;</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pseudocode2_math_engine</span> <span class="o">=</span> <span class="s2">&quot;katex&quot;</span>  <span class="c1"># or &quot;mathjax3&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="tips">
 <h3>Tips<a class="headerlink" href="#tips" title="Link to this heading">¶</a></h3>
@@ -322,7 +349,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 <h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">¶</a></h2>
 <div class="sphinx-tabs docutils container" id="hello-world-algo">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140482711000736" >\begin{algorithmic}
+<pre class="scopeline-pseudocode" id="pseudocode-140331508008656" >\begin{algorithmic}
 \PRINT \texttt{&#39;hello world&#39;}
 \end{algorithmic}</pre></div>
 </div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">pcode</span><span class="p">::</span>
@@ -335,7 +362,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container" id="quick-sort">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140482710666544" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
+<pre class="scopeline-pseudocode" id="pseudocode-140331507452992" data-line-number="true" data-title-prefix="PseudoCode">% This quicksort algorithm is extracted from Chapter 7, Introduction to Algorithms (3rd edition)
 \begin{algorithm}
 \caption{Quicksort}
 \begin{algorithmic}
@@ -394,7 +421,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-2-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-2-2-0" name="2-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-2-2-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-2-2-1" name="2-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-2-2-0" class="sphinx-tabs-panel" id="panel-2-2-0" name="2-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140482709849376" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-140331507791904" data-indent-size="2.3em" data-caption-count="12" data-title-prefix="算法">\begin{algorithm}
 \caption{Test text-style}
 \begin{algorithmic}
 \REQUIRE some preconditions
@@ -458,7 +485,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container" id="test-atoms-algo">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140482711258112" data-line-number="true" data-title-prefix="Algorithm">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-140331506905488" data-line-number="true" data-title-prefix="Algorithm">\begin{algorithm}
 \caption{Test atoms}
 \begin{algorithmic}
 \STATE \textbf{Specials:} \{ \} \$ \&amp; \# \% \_
@@ -491,7 +518,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container" id="test-control-blocks">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-4-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-4-4-0" name="4-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-4-4-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-4-4-1" name="4-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-4-4-0" class="sphinx-tabs-panel" id="panel-4-4-0" name="4-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140482713237536" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
+<pre class="pseudocode" id="pseudocode-140331554150288" data-line-number="true" data-line-number-punc=":">\begin{algorithm}
 \caption{Test control blocks}
 \begin{algorithmic}
 \PROCEDURE{Test-If}{}
@@ -623,7 +650,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-5-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-5-5-0" name="5-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-5-5-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-5-5-1" name="5-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-5-5-0" class="sphinx-tabs-panel" id="panel-5-5-0" name="5-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="scopeline-pseudocode" id="pseudocode-140482709848272" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="!" data-no-end="true">\begin{algorithm}
+<pre class="scopeline-pseudocode" id="pseudocode-140331507793536" data-line-number="true" data-comment-delimiter="%" data-line-number-punc="!" data-no-end="true">\begin{algorithm}
 \caption{Test statements and comments}
 \begin{algorithmic}
 \PROCEDURE{Test-Statements}{}
@@ -674,7 +701,7 @@ in your Sphinx theme’s custom CSS file (e.g., <code class="docutils literal no
 </div></div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-6-6-0" name="6-0" role="tab" tabindex="0">Rendered</button><button aria-controls="panel-6-6-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-6-6-1" name="6-1" role="tab" tabindex="-1">Source Code</button></div><div aria-labelledby="tab-6-6-0" class="sphinx-tabs-panel" id="panel-6-6-0" name="6-0" role="tabpanel" tabindex="0"><div class="pseudocode-container docutils container">
-<pre class="pseudocode" id="pseudocode-140482709850960" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
+<pre class="pseudocode" id="pseudocode-140331505765056" data-line-number="true" data-indent-size="5em">% This quicksort algorithm is extracted from Chapter 7, Introduction
 % to Algorithms (3rd edition)
 \begin{algorithm}
 \caption{Quicksort}

@@ -55,6 +55,31 @@ Pseudocode rendering is extended with practical options (all compatible with pse
 - ``scopelines``: Highlight scope lines (those with control block starters like IF, FOR, WHILE, etc.)
 - ``no-scopelines``: Disable scope line highlighting
 
+Typical usage example:
+
+.. code-block:: rst
+
+    .. pcode::
+        :linenos:
+        :indent: 1.5em
+        :comment-delimiter: "#"
+        :line-number-punc: " | "
+        :no-end:
+        :title-prefix: "PseudoCode"
+        :scopelines:
+
+        \begin{algorithm}
+        \caption{My Sample Algorithm}
+        \begin{algorithmic}
+        \STATE Initialize variables
+        \FOR{each item in list}
+            \IF{item is valid}
+                \STATE Process item  # This is a comment
+            \ENDIF
+        \ENDFOR
+        \end{algorithmic}
+        \end{algorithm}
+
 Global Configuration via ``pseudocode2_options``
 =====================================================
 
@@ -73,6 +98,12 @@ Pseudocode rendering styles can be unified across the entire project using a sin
 
 **Priority Rule**:
 Configuration priority (higher priority overrides lower): Directive option (e.g., :linenos: in .rst) > pseudocode2_options (global in conf.py) > pseudocode.js default
+
+Another configurable option is ``pseudocode2_math_engine`` (set in `conf.py`), which specifies the math rendering engine to use (either ``"katex"`` or ``"mathjax3"``; default is ``"katex"``):
+
+.. code-block:: python
+
+    pseudocode2_math_engine = "katex"  # or "mathjax3"
 
 Tips
 =====================================================
